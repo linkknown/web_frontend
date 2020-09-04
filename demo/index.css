@@ -1,0 +1,442 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+    content:".";
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+
+/* 模态对话框 */
+.modalShade {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 100;
+}
+
+.modalDialog {
+    width: 400px;
+    height: 500px;
+    /* 此处应该改成 fixed 更合适 */
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+}
+
+.dialogHeader {
+    height: 80px;
+    line-height: 80px;
+    background-color: #7676ce;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+.dialogClose {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+.dialogClose:hover {
+    transform: rotateZ(180deg);
+}
+
+
+/* 轮播图 */
+.swiperBox {
+    position: relative;
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+.swiperList {
+    list-style: none;
+    width: 9999px;
+}
+.swiperItem {
+    width: 800px;
+    height: 400px;
+    float: left;
+    line-height: 400px;
+}
+.swiperItem img {
+    width: 800px;
+    height: 400px;
+    background-size: cover;
+}
+.swiperAuto {
+    animation: swiperMarginLeft 10.5s infinite;
+}
+
+@keyframes swiperMarginLeft {
+    0% {
+        margin-left: 0;
+    }
+    18% {
+        margin-left: 0;
+    }
+    22% {
+        margin-left: -800px;
+    }
+    38% {
+        margin-left: -800px;
+    }
+    42% {
+        margin-left: -1600px;
+    }
+    58% {
+        margin-left: -1600px;
+    }
+    62% {
+        margin-left: -2400px;
+    }
+    78% {
+        margin-left: -2400px;
+    }
+    82% {
+        margin-left: -3200px;
+    }
+    96% {
+        margin-left: -3200px;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+.translateTextDiv li{
+    list-style: none;
+    float: left;
+    width: 50px;
+    text-align: center;
+}
+.translateTextDiv li:hover{
+    color: orange;
+    cursor: pointer;
+}
+.translateTextDivBottomBorder {
+    width: 50px;
+    height: 2px;
+    margin-top: 5px;
+    background-color: orange;
+    transition: transform .3s cubic-bezier(.645,.045,.355,1);
+}
+
+
+/* 特效 border */
+.borderAnim01 {
+    display: inline-block;
+    cursor: pointer;
+}
+.borderAnim01:hover {
+    color: #ff6900;
+}
+.borderAnim01:after {
+    content: '';
+    height: 2px;
+    margin: 3px auto;
+    width: 0;
+    background-color: #ff6900;
+    display: block;
+
+    transition: width 0.2s linear;
+}
+.borderAnim01:hover:after {
+    width: 100%;
+}
+
+
+/* 三角形和箭头 */
+.sjx1 {
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color:#FFCCCC #0099CC #996699 #339933;
+}
+.sjx2 {
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color:#FFCCCC transparent transparent transparent;   /* transparent 属性用来指定全透明色彩 */
+}
+.sjx3 {
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color:transparent #0099CC transparent transparent;
+}
+.sjx4 {
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color:transparent transparent #996699 transparent;
+}
+.sjx5 {
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color:transparent transparent transparent #339933;
+}
+.sjx5 {
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color:transparent transparent transparent #339933;
+    transform: rotate(45deg); /*顺时针旋转*/
+}
+.jt0{
+    position: absolute;
+}
+.jt0:before,.jt0:after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 10px transparent dashed;
+    border-left: 10px transparent dashed;
+    border-bottom: 10px transparent dashed;
+    border-right: 10px #fff solid;      /* 上左下透明,右边白色 */
+}
+.jt0:before{
+    border-right: 10px #0099CC solid;   /* before 前右边颜色,覆盖之前的白色 */
+}
+.jt0:after{
+    left: 5px;                          /* 覆盖并错开 5 px */
+    border-right: 10px #fff solid;      /* after 后右边颜色,覆盖之前的白色,但还是白色 */
+}
+.jt1{
+    position: absolute;
+}
+.jt1:before,.jt1:after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 10px transparent dashed;
+    border-left: 10px transparent dashed;
+    border-bottom: 10px transparent dashed;
+    border-right: 10px #fff solid;      /* 上左下透明,右边白色 */
+}
+.jt1:before{
+    border-right: 10px #0099CC solid;   /* before 前右边颜色,覆盖之前的白色 */
+}
+.jt1:after{
+    left: 1px;                          /* 覆盖并错开1px */
+    border-right: 10px #fff solid;      /* after 后右边颜色,覆盖之前的白色,但还是白色 */
+}
+.jt2{
+    position: absolute;
+}
+.jt2:before,.jt2:after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 10px transparent dashed;
+    border-left: 10px transparent dashed;
+    border-right: 10px transparent dashed;
+    border-bottom: 10px #fff solid;
+}
+.jt2:before{
+    border-bottom: 10px #0099CC solid;
+}
+.jt2:after{
+    top: 1px; /*覆盖并错开1px*/
+    border-bottom: 10px #fff solid;
+}
+
+
+
+/* 右侧菜单栏 */
+.rightMenuDiv {
+    position: fixed;
+    width: 40px;
+    height: 360px;
+    right: 20px;
+    top: 50%;
+    background-color: #f5f3f3;
+    transform: translateY(-50%);
+}
+.rightMenuDiv li {
+    list-style: none;
+    float: left;
+    width: 100%;
+    height: 60px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.rightMenuDiv li:hover {
+    background-color: black;
+    color: white;
+}
+/*.rightMenuDiv li:not(:last-child) {*/
+/*    border-bottom: 1px solid #c7c7c7;*/
+/*    !* border 不占空间 *!*/
+/*    box-sizing: border-box;*/
+/*}*/
+.rightMenuDiv li:not(:last-child):after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    content: '';
+    width: 30px;
+    height: 1px;
+    background-color: #c7c7c7;
+}
+.rightMenuDiv li i{
+    display: block;
+    height: 60%;
+    transform: translateY(10px);
+}
+.rightMenuDiv li:hover i{
+    animation: scaleAnimation 0.5s linear;
+}
+@keyframes scaleAnimation {
+    0% {
+        /* translateY(10px) 不能丢,否则有抖动问题 */
+        transform: translateY(10px) scale(1.0);
+    }
+    50% {
+        transform: translateY(10px) scale(1.2);
+    }
+    100% {
+        transform: translateY(10px) scale(1.0);
+    }
+}
+.tipInfo {
+    position: absolute;
+    width: 200px;
+    left: -200px;
+    top: 0;
+    height: 60px;
+    line-height: 60px;
+    background-color: #ff6900;
+    text-align: right;
+    font-size: 16px;
+    color: white;
+    padding: 0 20px;
+    /* 解决加 padding 后盒子模型变大的问题 */
+    box-sizing: border-box;
+    /*display: none;*/
+    visibility: hidden;
+
+    transform: translateX(-10px);
+    /*
+        transition设置display过渡无效
+        display:none的时候,页面文档流中将不会存在该元素,display:block的时候,文档流中才存在该元素。transition属性无法对一个从无到有的元素进行过渡显示。
+        解决方案: 使用visibility替代display
+    */
+    transition: transform 0.2s;
+}
+.rightMenuDiv li:hover .tipInfo{
+    /*display: block;*/
+    visibility: visible;
+    transform: translateX(0px);
+}
+.tipInfo:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 10px;        /* 三角形实际高度 20 */
+    border-style: solid;
+    border-color: transparent transparent transparent #ff6900;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+}
+
+
+/* 高斯模糊 */
+.blur-box {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #f6f6f6;
+    background: #f6290e;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+}
+.blur-box:hover {
+    background: #ff6900;
+}
+.blur-btn:hover:before {
+    background: rgba(255,255,255,.5);
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 100%;
+    content: '';
+    left: 0;
+    top: 0;
+    transform: translateX(-50px) skewX(-15deg);
+    filter: blur(20px);         /* CSS: filter: blur(); 实现高斯模糊效果,不可不知的细节优化 */
+    opacity: .6;
+    animation: glint 1.2s infinite;
+}
+@keyframes glint{
+    0%{transform:translateX(-50px) skewX(-15deg);opacity:.6}
+    100%{transform:translateX(300px) skewX(-15deg);opacity:1}
+}
+
+
+/* 拖拽功能 */
+.dragDiv01 {
+    height: 200px;
+    background-color: #ffe2bf;
+}
+.dragDiv02,.dragDiv03 {
+    width: 50%;
+    height: 300px;
+}
+.dragDiv02 {
+    background-color: #f4efff;
+}
+.dragDiv03 {
+    background-color: #fff1f1;
+}
+
+.fruitItem {
+    padding: 5px 10px;
+    margin: 10px;
+    background-color: #91ef91;
+    display: inline-block;
+    cursor: pointer;
+}
+
+

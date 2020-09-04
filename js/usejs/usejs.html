@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引入 JavaScript 的三种方式</title>
+    <!-- 外部式引入 -->
+    <script src="./usejs.js"></script>
+    <script>
+        // window.onload 外部式和嵌入式会有覆盖问题，只能用一种
+        window.onload = function () {
+            alert("嵌入式方式引入 JavaScript 脚本");
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 练习引入 JavaScript 的三种方式 -->
+    <a onclick="alert('行内式方式引入 JavaScript 脚本')">行内式：点击我执行JavaScript</a>
+
+</body>
+<!-- body 后面写表示页面已经 load 完全（window.onload 可以省略）-->
+<script src="./usejs2.js"></script>
+</html>

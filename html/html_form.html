@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html 表单练习</title>
+</head>
+<body>
+
+    <!-- 表单练习 -->
+    <form action="/login" enctype="text/plain">
+        用户名：<input type="text" name="userName"/>
+        密码：<input type="password" name="passWord"/>
+        <button type="button">普通按钮</button>
+        <button type="submit">提交按钮</button>
+        <button type="reset">重置按钮</button>
+
+        <input type="button" value="普通按钮"/>
+        <input type="submit" value="提交按钮"/>
+        <input type="reset" value="重置按钮"/>
+    </form>
+
+    <br/><br/>
+    <!-- 验证 target 属性 -->
+    <form action="/login" enctype="text/plain" target="_blank">
+        用户名：<input type="text" name="userName"/>
+        密码：<input type="password" name="passWord"/>
+
+        <input type="button" value="普通按钮"/>
+        <input type="submit" value="提交按钮"/>
+        <input type="reset" value="重置按钮"/>
+    </form>
+
+    <br/><br/>
+    <!-- 验证 get|post 请求方式 -->
+    <form action="/login" enctype="text/plain" method="get">
+        用户名：<input type="text" name="userName"/>
+        密码：<input type="password" name="passWord"/>
+        <input type="submit" value="提交按钮"/>
+    </form>
+    <br/>
+    <form action="/login" enctype="text/plain" method="post">
+        用户名：<input type="text" name="userName"/>
+        密码：<input type="password" name="passWord"/>
+        <input type="submit" value="提交按钮"/>
+    </form>
+
+    <br/><br/>
+    <!-- input 标签练习 -->
+    <form>
+        <!-- placeholder 常用于表单提示, value 常用于表单回显 -->
+        用户名：<input type="text" name="userName" placeholder="我是默认用户名"/>  <br/>
+        用户名：<input type="text" name="userName" value="我是默认用户名"/>  <br/>
+        密码：<input type="password" name="passWord"/>  <br/>
+        必填密码：<input type="password" name="passWord" required="required"/>  <br/>
+        只读文本：<input type="text" name="text01" value="我是只读文本" readonly="readonly"/>  <br/>
+        禁用文本：<input type="text" name="text01" value="我是禁用文本" disabled="disabled"/> <br/>
+        我是隐藏文本:<input type="hidden" name="hiddenText" value="我是隐藏文本"/>  <br/>
+        我是文件选择框：<input type="file" name="uploadFile"/>   <br/>
+        我是单选框：
+        <input type="radio" name="radio"/>单选框1
+        <input type="radio" name="radio"/>单选框2
+        <input type="radio" name="radio"/>单选框3      <br/>
+        我是复选框：
+        <input type="checkbox" name="checkbox"/>父选框1
+        <input type="checkbox" name="checkbox"/>复选框2
+        <input type="checkbox" name="checkbox"/>复选框3 <br/>
+        <input type="submit" value="submit"/>
+    </form>
+
+    <br/><br/>
+    <!-- 练习 select 下拉列表 -->
+    下拉选择框：<select name="addressSelect">
+        <option value="tishi" selected="selected">-- 请选择 --</option>
+        <option value="beijing">beijing</option>
+        <option value="shanghai">shanghai</option>
+        <option value="guangzhou" disabled="disabled">guangzhou</option>
+        <option value="shenzhen" disabled="disabled">shenzhen</option>
+    </select>
+
+    下拉选择框(多选)：<select name="addressSelect" multiple="multiple">
+        <option value="beijing">beijing</option>
+        <option value="shanghai">shanghai</option>
+        <option value="guangzhou">guangzhou</option>
+        <option value="shenzhen">shenzhen</option>
+        <option value="shenzhen">shenzhen</option>
+        <option value="shenzhen">shenzhen</option>
+        <option value="shenzhen">shenzhen</option>
+        <option value="tishi" selected="selected">-- 请选择 --</option>
+    </select>
+
+    <br/><br/>
+    <!-- 练习多行文本框 -->
+    多行文本框：<textarea name="article" rows="10" placeholder="我是文本框提示信息"></textarea>
+    多行文本框：<textarea name="article" rows="10">我是文本框内容</textarea>
+    多行文本框：<textarea name="article" rows="10" disabled="disabled">我被禁用了</textarea>
+    多行文本框：<textarea name="article" rows="10" readonly="readonly">我是只读的</textarea>
+
+    <br/><br/>
+    <!-- 练习 label 标签 -->
+    <input type="checkbox" name="checkbox"/> 点击我选不中奥~
+    <input type="checkbox" name="checkbox" id="checkboxId"/> <label for="checkboxId">点击我选得中奥~</label> <br/>
+
+    <!-- 点击 label 浏览器就会自动将焦点转到和该标签相关联的控件上 -->
+    <form>
+        <label for="userNameId">用户名：</label>
+        <input type="text" name="userName" id="userNameId"/>
+        <label for="passwordId">密码：</label>
+        <input type="password" name="passwo rd" id="passwordId"/>
+    </form>
+
+    <br/><br/>
+    <!-- 测试用户信息分组 -->
+    <form>
+        <fieldset>
+            <legend>用户信息</legend>
+            <label>用户名：</label><input type="text" name="userName"/>
+            <label>密码：</label><input type="password" name="password"/>
+        </fieldset>
+        <fieldset>
+            <legend>我是分组标题</legend>
+            <label>昵称：</label><input type="text" name="nickName"/>
+        </fieldset>
+    </form>
+</body>
+</html>

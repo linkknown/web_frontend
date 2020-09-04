@@ -1,0 +1,838 @@
+.clearfix:after {
+    content:".";
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
+}
+
+
+/* css 文本优化 */
+.p1 {
+    font-family:"Times New Roman",Georgia,Serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: pink;
+    text-align: right;
+    text-indent: 50px;
+    line-height: 50px;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+/* 列表优化 */
+#ul01 > ul li {
+    list-style: none;
+}
+#ul02 > ul li {
+    list-style: circle;
+}
+#ul03 > ul li {
+    list-style: square;
+}
+#ul04 > ul li {
+    margin: 0 20px;
+    list-style-image: url("../img/list.png");
+}
+
+#ul05 > ul li {
+    list-style:none;
+    background-image: url("../img/list.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    text-indent: 2em;
+}
+
+/* 浮动练习 */
+.floatDiv {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    margin: 10px;
+}
+.floatLeft {
+    float: left;
+}
+.floatRight {
+    float: right;
+}
+
+.floatUl ul li{
+    list-style: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: green;
+}
+
+.floatArea .left {
+    height: 100px;
+    width: 10%;
+    background-color: pink;
+    float: left;
+}
+.floatArea .center {
+    height: 100px;
+    width: 80%;
+    background-color: gray;
+    float: left;
+}
+.floatArea .right {
+    height: 100px;
+    width: 10%;
+    background-color: blue;
+    float: right;
+}
+
+/* 练习 position 定位 */
+/* 练习相对定位 */
+.relativeDiv {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: pink;
+    display: inline-block;
+}
+.relativeDiv:last-child {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+/* 练习绝对定位 */
+.absoluteDiv {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: pink;
+    display: inline-block;
+}
+.absoluteDiv1A {
+    margin: 0;
+    position: absolute;
+    background-color: darkcyan;
+}
+.absoluteDiv1B {
+    margin: 0;
+    position: absolute;
+    background-color: darkcyan;
+    left: 0;
+    top: 0;
+}
+.absoluteDiv2 {
+    margin: 0;
+    position: absolute;
+    background-color: green;
+}
+.absoluteDiv3 {
+    margin: 0;
+    position: absolute;
+    background-color: pink;
+    top: 120px;
+}
+.absoluteDiv4 {
+    margin: 0;
+    position: absolute;
+    background-color: blue;
+    left: 200px;
+}
+.absoluteDiv5 {
+    margin: 0;
+    position: absolute;
+    background-color: yellow;
+    right: 0;
+}
+.absoluteDiv6 {
+    margin: 0;
+    position: absolute;
+    background-color: orange;
+    right: 0;
+    bottom: 0;
+}
+.absoluteDiv7 {
+    margin: 0;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-color: orange;
+    left: 400px;
+    top: 100px;
+}
+.absoluteDiv7A {
+    margin: 0;
+    position: absolute;
+    background-color: pink;
+    left: 0;
+    bottom: 0;
+}
+.absoluteDiv7B {
+    margin: 0;
+    position: absolute;
+    background-color: blueviolet;
+    top: -10px;
+    right: -10px;
+}
+/* 练习固定定位 */
+.fixedDiv {
+    width: 100px;
+    height: 100px;
+    background-color: gold;
+}
+.fixedDiv1 {
+    position: fixed;
+    right: 0;
+    top:0;
+}
+.fixedDiv2 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+.fixedDiv3 {
+    position: fixed;
+    right: 0;
+    top:350px;
+}
+
+/* 练习 z-index */
+.zIndexDiv {
+    width: 100px;
+    height: 100px;
+}
+.zIndexDiv01 {
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.zIndexDiv02 {
+    background-color: orange;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+.zIndexDiv03 {
+    background-color: yellow;
+    position: absolute;
+    left: 80px;
+    top: 80px;
+    z-index: 110;
+}
+.zIndexDiv04 {
+    background-color: green;
+    position: absolute;
+    left: 120px;
+    top: 120px;
+}
+
+/* 练习 background 属性 */
+.backgroundDiv1 {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    display: inline-block;
+}
+.backgroundDiv2 {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background-image: url("../img/bird.jpg");
+}
+.backgroundDiv3 {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background-image: url("../img/bird.jpg");
+    background-size: 100% 100%;
+}
+.backgroundDiv4 {
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    background: url("../img/run.gif");
+}
+.backgroundDiv5 {
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    background: url("../img/run.gif") no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 练习 opacity 透明度 */
+.opacityDiv{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: red;
+}
+.opacityDiv1 {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.opacityDiv2 {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.opacityDiv3 {
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+/* 练习 cursor 光标 */
+.cursorDiv2 {
+    cursor: pointer;
+}
+
+/* 练习 transform 变形（转换） */
+.transformDiv {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 20px;
+    display: inline-block;
+}
+
+/* 练习 transition 过渡效果 */
+.transitionDiv {
+    width: 200px;
+    height: 100px;
+    background-color: pink;
+    margin: 20px 50px;
+    cursor: pointer;
+}
+
+.transitionDiv01 {
+    background-color: blue;
+    transition-property: width;
+    transition-duration: 3s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+}
+.transitionDiv01:hover {
+    width: 400px;
+}
+
+.transitionDiv02 {
+    background-color: blue;
+    transition: width 3s linear 1s;
+    /* 和下面等价 */
+    /*transition-property: width;*/
+    /*transition-duration: 3s;*/
+    /*transition-timing-function: linear;*/
+    /*transition-delay: 1s;*/
+}
+.transitionDiv02:hover {
+    width: 400px;
+}
+
+.transitionDiv03 {
+    background-color: blue;
+    /* 同时过渡多个属性 */
+    transition: width 3s linear, background-color 3s linear;
+}
+.transitionDiv03:hover {
+    width: 400px;
+    background-color: yellow;
+}
+
+.transitionDiv04 {
+    background-color: blue;
+    /*transition: width 3s ease;*/
+    /*transition: width 3s ease-in;*/
+    /*transition: width 3s ease-out;*/
+    /*transition: width 3s ease-in-out;*/
+    /* 使用贝塞尔曲线 */
+    transition: width 3s cubic-bezier(0.3, 0.72, 0.74, 0.25);
+}
+.transitionDiv04:hover {
+    width: 400px;
+}
+
+/* 测试 css 动画效果 keyframes */
+.animationDiv {
+    width: 200px;
+    height: 100px;
+    background-color: pink;
+    margin: 20px 50px;
+}
+.animationDiv01 {
+    animation-name: showAnimation01;
+    /* animation-iteration-count: n|infinite n 次或者无限次 */
+    animation-iteration-count: infinite;    /* 重复执行 */
+    animation-duration: 3s;
+    /* 线性时间线 */
+    animation-timing-function: linear;
+}
+@keyframes showAnimation01 {
+    from {
+        width: 200px;
+        background-color: #d0d0d0;
+    }
+    to {
+        width: 400px;
+        background-color: pink;
+    }
+}
+
+.animationDiv02 {
+    animation: showAnimation02 3s linear infinite;
+}
+@keyframes showAnimation02 {
+    0% {
+        width: 200px;
+        background-color: #d0d0d0;
+    }
+    100% {
+        width: 400px;
+        background-color: pink;
+    }
+}
+
+.animationDiv03 {
+    /* 延迟 1s 执行 */
+    animation: showAnimation02 3s linear 1s infinite;
+}
+.animationDiv04 {
+    /* 延迟 1s 执行 */
+    animation: showAnimation02 3s linear 1s;
+}
+.animationDiv05 {
+    /* 延迟 1s 执行,当动画完成后,保持最后一个属性值 */
+    animation: showAnimation02 3s linear 1s forwards;
+}
+.animationDiv06 {
+    /* 延迟 1s 执行,当动画完成后,保持最后一个属性值 */
+    animation: showAnimation06 3s linear infinite;
+}
+/* 多个进度值 */
+@keyframes showAnimation06 {
+    0% {
+        width: 0;
+        background-color: pink;
+    }
+    25% {
+        width: 250px;
+    }
+    50% {
+        width: 500px;
+    }
+    75%{
+        width: 750px;
+    }
+    100% {
+        width: 1000px;
+        background-color: green;
+    }
+}
+
+/* css 框大小 */
+.boxSizeDiv01 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+}
+.boxSizeDiv02 {
+    width: 300px;
+    height: 100px;
+    padding: 50px;
+    border: 1px solid red;
+}
+.boxSizeDiv03 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+.boxSizeDiv04 {
+    width: 300px;
+    height: 100px;
+    padding: 50px;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+/* 如何给 div 设置 border 样式,且 div 还不变形 */
+.boxSizeDiv05 ul,.boxSizeDiv06 ul,.boxSizeDiv07 ul, .boxSizeDiv08 ul {
+    list-style: none;
+}
+.boxSizeDiv05 ul li,.boxSizeDiv06 ul li,.boxSizeDiv07 ul li,.boxSizeDiv08 ul li {
+    margin: 5px;
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+.boxSizeDiv05 ul li img,.boxSizeDiv06 ul li img,.boxSizeDiv07 ul li img,.boxSizeDiv08 ul li img {
+    width: 100%;
+    height: 100%;
+}
+.boxSizeDiv05 ul li:hover {
+    /* 添加边框后图片大小不变，但是元素实际大小变大 */
+    /* 浏览器默认行为 */
+    box-sizing: content-box;
+    border: 5px solid black;
+}
+.boxSizeDiv06 ul li:hover {
+    /* 添加边框后元素实际大小不变，但是图片被缩小 */
+    /* 怪异模型 */
+    box-sizing: border-box;
+    border: 5px solid black;
+}
+.boxSizeDiv07 ul li {
+    /* 设置默认背景为透明色（固定颜色白色不一定和背景颜色一致，建议透明色） */
+    /*border: 5px solid white;*/
+    border: 5px solid rgba(255, 255, 255, 0);
+}
+.boxSizeDiv07 ul li:hover {
+    border: 5px solid black;
+}
+.boxSizeDiv08 ul li:hover {
+    /* 给盒子添加 shadow 阴影,效果最好 */
+    box-shadow: 0 0 0 5px black;
+}
+
+/* 测试 box-shadow 阴影 */
+.boxShadowDiv {
+    width: 300px;
+    height: 100px;
+    margin: 30px;
+    background-color: #f3f3f3;
+}
+
+.boxShadowDiv01 {
+    /* 默认外阴影 */
+    box-shadow: 0 0 10px 5px red;
+}
+.boxShadowDiv02 {
+    /* 内阴影 */
+    box-shadow: 0 0 10px 5px red inset;
+}
+.boxShadowDiv03 {
+    /* 第三个参数模糊距离：表示 blur 模糊化程度,此处不模糊 */
+    box-shadow: 0 0 0 5px red;
+}
+.boxShadowDiv04 {
+    /* 第四个参数表示阴影尺寸：spread 即阴影的厚度 */
+    box-shadow: 0 0 0 1px red;
+}
+.boxShadowDiv05 {
+    box-shadow: 5px 0 0 5px red;
+}
+.boxShadowDiv06 {
+    box-shadow: -5px 0 0 5px red;
+}
+.boxShadowDiv07 {
+    box-shadow: 0 5px 0 5px red;
+}
+.boxShadowDiv08 {
+    box-shadow: 0 -5px 0 5px red;
+}
+.boxShadowDiv09 {
+    box-shadow: 5px 5px 0 5px red;
+}
+.boxShadowDiv10 {
+    box-shadow: -5px -5px 0 5px red;
+}
+.boxShadowDiv11 {
+    box-shadow: 5px 0 0 0 red;
+}
+.boxShadowDiv12 {
+    box-shadow: -5px 0 0 0 red;
+}
+.boxShadowDiv13 {
+    /* 四色边框,不连贯 */
+    box-shadow: 0 -5px 0 red, 5px 0 0 green, 0 5px 0 blue, -5px 0 0 deeppink;
+}
+.boxShadowDiv14 {
+    /* 四色内边框 */
+    box-shadow: 0 -5px 0 red inset, 5px 0 0 green inset, 0 5px 0 blue inset, -5px 0 0 deeppink inset;
+}
+
+/* 测试 display 属性 */
+.displayDiv {
+    width: 100px;
+    height: 50px;
+    background-color: orange;
+    margin: 10px;
+}
+.displayDiv03,.displayDiv04 {
+    display: inline;
+}
+.displayDiv05,.displayDiv06 {
+    display: inline-block;
+}
+.displayDiv07,.displayDiv08 {
+    display: inline-block;
+}
+/* inline-block 基线对齐问题, vertical-align 调整基线 */
+.displayDiv09,.displayDiv10 {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* 弹性盒子，浮动需要 clear,麻烦些 */
+.notFlexDiv div {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    float: left;
+    margin: 30px;
+}
+.flexDiv {
+    display: inline-flex;
+    flex-wrap: wrap;
+    /* 其它特性自行了解 */
+}
+.flexDiv div {
+    width: 200px;
+    height: 200px;
+    background-color: lightgoldenrodyellow;
+    margin: 30px;
+}
+
+/* flex 补位问题 */
+.flexDiv2,.flexDiv3 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.flexDiv2 div {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    margin: 30px;
+}
+.flexDiv3 div {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    margin: 30px;
+}
+.flexDiv3 .flexPlaceHolderDiv {
+    cursor: default;
+    height: 0;
+}
+
+/* flex 和 inline-flex 的区别 */
+.flexDiv4 > .flex {
+    display: flex;
+    background-color: #d0d0d0;
+}
+.flexDiv4 > .flex > div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+}
+.flexDiv4 > .flex > div:last-child {
+    height: 120px;
+}
+
+.flexDiv4 > .inlineFlex {
+    display: inline-flex;
+    background-color: #ffbcbc;
+}
+.flexDiv4 > .inlineFlex > div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid green;
+}
+.flexDiv4 > .inlineFlex > div:last-child {
+    height: 120px;
+}
+
+.flexDiv4 > .flex2 {
+    display: flex;
+    background-color: #d0d0d0;
+}
+.flexDiv4 > .flex2 > div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+}
+.flexDiv4 > .flex2 > div:last-child {
+    height: 120px;
+    flex-grow: 1;
+}
+
+.flexDiv4 > .inlineFlex2 {
+    display: inline-flex;
+    background-color: #ffbcbc;
+    width: 1000px;
+}
+.flexDiv4 > .inlineFlex2 > div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid green;
+}
+.flexDiv4 > .inlineFlex2 > div:last-child {
+    height: 120px;
+    flex-grow: 1;
+}
+
+.flexDiv4 > .inlineFlex3 {
+    display: inline-flex;
+    background-color: #ffbcbc;
+    width: 1000px;
+}
+.flexDiv4 > .inlineFlex3 > div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid green;
+}
+.flexDiv4 > .inlineFlex3 > div:nth-child(1) {
+    flex-grow: 4;
+}
+.flexDiv4 > .inlineFlex3 > div:nth-child(2) {
+    flex-grow: 3;
+}
+.flexDiv4 > .inlineFlex3 > div:nth-child(3) {
+    flex-grow: 2;
+}
+.flexDiv4 > .inlineFlex3 > div:nth-child(4) {
+    flex-grow: 1;
+}
+
+
+/* 布局练习 */
+.layoutDiv {
+    height: 600px;
+}
+.layoutDiv .nav {
+    height: 20%;
+    background-color: green;
+}
+.layoutDiv .aside {
+    height: 70%;
+    width: 30%;
+    background-color: orange;
+    float: left;
+}
+.layoutDiv .content {
+    height: 70%;
+    width: 70%;
+    background-color: gold;
+    float: left;
+}
+.layoutDiv .footer {
+    clear: left;
+    height: 10%;
+    background-color: blueviolet;
+}
+
+.layoutDiv2 {
+    height: 600px;
+}
+.layoutDiv2 nav {
+    height: 20%;
+    background-color: green;
+}
+.layoutDiv2 aside {
+    height: 70%;
+    width: 30%;
+    background-color: orange;
+    float: left;
+}
+.layoutDiv2 section {
+    height: 70%;
+    width: 70%;
+    background-color: gold;
+    float: left;
+}
+.layoutDiv2 footer {
+    clear: left;
+    height: 10%;
+    background-color: blueviolet;
+}
+
+/* 练习 rgb 和 rgba */
+.rgbaDiv div {
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+}
+/* nth-child(n)中的n不是从0开始的嘛，怎么从1开始了？ */
+.rgbaDiv div:nth-child(1) {
+    background-color: rgb(255, 0, 0);
+}
+.rgbaDiv div:nth-child(2) {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.rgbaDiv div:nth-child(3) {
+    background-color: rgb(0, 255, 0);
+}
+.rgbaDiv div:nth-child(4) {
+    background-color: rgba(0, 255, 0, 0.3);
+}
+.rgbaDiv div:nth-child(5) {
+    background-color: rgb(0, 0, 255);
+}
+.rgbaDiv div:nth-child(6) {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+/* 练习 linear-gradient */
+.linearGradientDiv div {
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+}
+.linearGradientDiv div:nth-child(1) {
+    background-image: linear-gradient(to right, red, green, blue);
+}
+.linearGradientDiv div:nth-child(2) {
+    background-image: linear-gradient(to bottom, red, green, blue);
+}
+.linearGradientDiv div:nth-child(3) {
+    background-image: linear-gradient(to right bottom, red, green, blue);
+}
+.linearGradientDiv div:nth-child(4) {
+    background-image: linear-gradient(to right bottom, red, green, blue, red, green, blue, red, green, blue);
+}
+.linearGradientDiv div:nth-child(5) {
+    /* 百分数是位置 */
+    background-image: linear-gradient(to right, red, red 33%, green 33%, green 66%, blue 66%, blue 100%);
+}
+.linearGradientDiv div:nth-child(6),.linearGradientDiv div:nth-child(7) {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border-radius: 50%;
+    background-image: -webkit-linear-gradient(top, red 0%, blue 30%, yellow 60%, green 90%);
+    background-image: -moz-linear-gradient(top, red 0%, blue 30%, yellow 60%, green 90%);
+    background-image: linear-gradient(top, red 0%, blue 30%, yellow 60%, green 90%);
+}
+.linearGradientDiv div:nth-child(7) {
+    /* 需要调整才能顶部对齐 */
+    vertical-align: top;
+}
+.linearGradientDiv div:nth-child(7) .linearGradientBox {
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background:#fff;
+    margin: 0;
+}
+
+/* 练习 !important */
+.importantDiv .div01 {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    margin: 10px;
+}
+.importantDiv .div01 {
+    background-color: green;
+}
+
+.importantDiv .div02 {
+    width: 200px;
+    height: 100px;
+    /* 提高优先权 */
+    background-color: red!important;
+    margin: 10px;
+}
+.importantDiv .div02 {
+    background-color: green;
+}

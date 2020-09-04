@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 框架使用</title>
+    <!-- jquery 需要在 index.js 之前引入 -->
+<!--    <script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>-->
+<!--    element.style 是内联样式或者是js改写代码之后所留下的 -->
+    <script src="./third/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css"/>
+    <script src="./index.js"></script>
+</head>
+<body style="padding: 50px;">
+
+    <!-- 测试 jquery -->
+    <!-- jquey 对象和 dom 对象互转-->
+    <div class="dom2jq">dom 对象转 jquery 对象</div>  <br/>
+    <div class="jq2dom">jquery 对象转 dom 对象</div>  <br/>
+
+    <!-- 练习基本选择器 -->
+    <div id="idDiv">我是ID选择器</div> <br/>
+    <div class="classDiv">我是class选择器</div> <br/>
+    <p>我是p元素选择器</p> <br/>
+    <h1>我是分组选择器 h1</h1>
+    <h2>我是分组选择器 h2</h2>
+    <h3>我是分组选择器 h3</h3>
+
+    <!-- 练习层级选择器 -->
+    <ul class="ul01">
+        <li>我是列表中的<span>元素</span></li>
+        <li>我是列表中的元素</li>
+    </ul>
+    <ul class="ul02">
+        <li>我是列表中的<span>元素</span></li>
+        <li>我是列表中的元素</li>
+    </ul>
+    <ul class="ul03">
+        <li>我是列表中的<span>元素</span></li>
+        <li>我是列表中的元素</li>
+    </ul>
+
+    <!-- 基本过滤选择器 -->
+    <dl>
+        <dt>列表标题</dt>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+    </dl>
+
+    <dl>
+        <dt>列表标题</dt>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+    </dl>
+
+    <dl>
+        <dt>列表标题</dt>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+    </dl>
+
+    <!-- 内容过滤选择器 -->
+    <dl>
+        <dt>列表标题</dt>
+        <dd>我是列表内容第一项</dd>
+        <dd></dd>
+        <dd><label>列表内容</label></dd>
+        <dd><span>列表内容</span></dd>
+    </dl>
+
+    <!-- 可见性选择器 -->
+    <div class="visibleDiv" style="display: none;">我是隐藏的内容</div>
+    <div class="visibleDiv" style="display: block;">我是显示的内容</div>
+
+    <!-- 属性过滤选择 -->
+    <dl>
+        <dt class="head">列表标题</dt>
+        <dd class="content01">列表内容</dd>
+        <dd class="content02">列表内容</dd>
+        <dd class="content03">列表内容</dd>
+        <dd class="content04">列表内容</dd>
+    </dl>
+
+    <dl>
+        <dt class="head">列表标题</dt>
+        <dd class="content01">列表内容</dd>
+        <dd class="content02">列表内容</dd>
+        <dd class="content03">列表内容</dd>
+        <dd class="content04">列表内容</dd>
+    </dl>
+
+    <br/><br/>
+    <!-- 测试查找 find、parent -->
+    <div class="queryDiv">
+        <div class="div01">
+            <div class="div03">我是测试内容03</div>
+            <div class="div04">我是测试内容04</div>
+        </div>
+        <div class="div02">
+            <div class="div05">我是测试内容05</div>
+            <div class="div06">我是测试内容06</div>
+        </div>
+
+        <button class="findTest">测试 find</button>
+        <button class="parentTest">测试 parent</button>
+    </div>
+
+    <br/><br/>
+    <!-- 表单选择器 -->
+    <input type="text" name="account"/>
+
+    <div class="selectAllDiv">
+        <h3>你喜欢的水果有：</h3>
+        <input type="checkbox" class="selectAll"/>全选 <br/>
+        <input type="checkbox"/>苹果
+        <input type="checkbox"/>香蕉
+        <input type="checkbox"/>梨子
+        <input type="checkbox"/>葡萄
+    </div>
+
+    <!-- 其它不举例了 -->
+
+    <!-- each 遍历 -->
+    <ul class="eachUl">
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+    </ul>
+
+    <!-- 数据缓存 -->
+    <div class="dataCache">
+        <button>设置缓存</button>
+        <button>读取缓存</button>
+        <button>清空缓存</button>
+    </div>
+
+    <ul class="dataCache">
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+    </ul>
+
+    <br/>
+    <!-- event 对象测试 -->
+    <div class="eventDiv">测试 event 对象</div>
+
+    <br/>
+    <!-- 数组操作 -->
+    <div class="arrayDiv">数组测试 [a-z] 转大写</div>
+    <div class="trimDiv"><span>~~~~~~~~~~</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;测试字符串 trim 操作      </span><span>~~~~~~</span></div>
+
+    <br/>
+    <!-- 测试 attr 方法 -->
+    <div class="attrDiv" style="background-color: pink;">测试 attr 方法</div>
+
+    <br/>
+
+    <!-- 测试 addClass、removeClass、toggleClass -->
+    <div class="showClassDiv" style="width: 300px;height: 100px;">div区域</div>
+    <div class="showClassDiv">测试 addClass</div>
+    <div class="showClassDiv">测试 removeClass</div>
+    <div class="showClassDiv">测试 toggleClass</div>
+
+    <br/>
+    <!-- html、text 文本值设置和获取 -->
+    <div class="htmlTextDiv">我是div内容</div>
+    <div class="htmlTextDiv"><span>我是div内容<span>我是div内容</span></span><span>我是div内容</span></div>
+
+    <br/>
+    <!-- 测试 on、off、trigger 事件 -->
+    <button class="onEvent">点击按钮啦~</button> &nbsp;&nbsp;&nbsp;
+    <button class="onEvent">测试 on</button>    &nbsp;&nbsp;&nbsp;
+    <button class="onEvent">测试 off</button>   &nbsp;&nbsp;&nbsp;
+    <button class="onEvent">测试 trigger</button>
+
+    <!-- 测试事件效果,其它效果不演示 -->
+    <div class="hoverDiv">测试 hover 效果</div>
+    <input type="text" name="blurInput"/>
+
+    <br/>
+    <!-- 其它效果自行练习 ...... 到此结束 -->
+
+    <!-- 测试 ajax 请求 -->
+    <button class="ajaxBtn">测试 ajax 发送请求</button>
+
+</body>
+</html>

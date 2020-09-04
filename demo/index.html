@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合练习 demo</title>
+    <link rel="stylesheet" type="text/css" href="./index.css"/>
+    <link rel="stylesheet" href="./third/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body style="padding: 100px;">
+    <!-- 模态对话框练习 -->
+    <div class="modalDiv">
+        <button>打开模态对话框</button>
+
+        <div class="modalShade hide"></div>
+        <div class="modalDialog hide">
+            <div class="dialogClose">X</div>
+            <div class="dialogHeader">
+                温馨提示
+            </div>
+            <div class="dialogContent"></div>
+        </div>
+    </div>
+
+    <br/><br/>
+    <!-- 轮播图实现 -->
+    <div class="swiperBox">
+        <ul class="swiperList swiperAuto">
+            <li class="swiperItem">
+                <a href="javascript:;">
+                    <img src="./img/img01.jpg" alt="">
+                </a>
+            </li>
+            <li class="swiperItem">
+                <a href="javascript:;">
+                    <img src="./img/img02.jpg" alt="">
+                </a>
+            </li>
+            <li class="swiperItem">
+                <a href="javascript:;">
+                    <img src="./img/img03.jpg" alt="">
+                </a>
+            </li>
+            <li class="swiperItem">
+                <a href="javascript:;">
+                    <img src="./img/img04.jpg" alt="">
+                </a>
+            </li>
+            <li class="swiperItem">
+                <a href="javascript:;">
+                    <img src="./img/img05.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <br/><br/>
+    <div class="translateTextDiv">
+        <ul class="clearfix">
+            <li>小说</li>
+            <li>文学</li>
+            <li>科技</li>
+            <li>政治</li>
+            <li>社交</li>
+            <li>娱乐</li>
+        </ul>
+        <div class="translateTextDivBottomBorder"></div>
+    </div>
+
+    <br/><br/>
+    <!-- 特效 border -->
+    <span class="borderAnim01">底部特效边框</span> &nbsp;&nbsp;&nbsp;
+    <span class="borderAnim01">底部特效边框</span> &nbsp;&nbsp;&nbsp;
+    <span class="borderAnim01">底部特效边框</span> &nbsp;&nbsp;&nbsp;
+    <span class="borderAnim01">底部特效边框</span> &nbsp;&nbsp;&nbsp;
+    <span class="borderAnim01">底部特效边框</span> &nbsp;&nbsp;&nbsp;
+
+    <br/><br/><br/><br/>
+    <!-- 三角形和箭头 -->
+    <div class="sjx1" style="display: inline-block;"></div> &nbsp;
+    <div class="sjx2" style="display: inline-block;"></div> &nbsp;
+    <div class="sjx3" style="display: inline-block;"></div> &nbsp;
+    <div class="sjx4" style="display: inline-block;"></div> &nbsp;
+    <div class="sjx5" style="display: inline-block;"></div> &nbsp;
+    <div class="jt0" style="display: inline-block;"></div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <div class="jt1" style="display: inline-block;"></div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <div class="jt2" style="display: inline-block;"></div> &nbsp;
+    <br/><br/>
+
+    <!-- 右侧菜单栏 -->
+    <div class="rightMenuDiv">
+        <ul>
+            <li><i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>反馈<div class="tipInfo">有什么问题要反馈吗？</div></li>
+            <li><i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>帮助<div class="tipInfo">有什么可以帮您的吗？</div></li>
+            <li><i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>导航<div class="tipInfo">查看更多网站信息</div></li>
+            <li><i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>新闻<div class="tipInfo">每日推送有趣新闻</div></li>
+            <li><i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>我的<div class="tipInfo">快来看看您有哪些权益</div></li>
+            <li><i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>收藏<div class="tipInfo">查看我的收藏</div></li>
+        </ul>
+    </div>
+
+    <!-- 高斯模糊 -->
+    <br/><br/>
+    <div class="blur-box">
+        <div class="blur-btn">测试高斯模糊（高光效果）</div>
+    </div>
+
+    <br/><br/>
+    <!-- 拖拽功能 -->
+    <div class="dragDiv">
+        <div class="dragDiv01">
+            <h1>选择你喜欢的水果</h1>
+            <div></div>
+        </div>
+        <div style="display: flex;">
+            <div class="dragDiv02" ondragover="fruitOnDragOver(event)" ondrop="fruitDrop(event, 2)">
+                <h3>将喜欢的水果拖拽至此</h3>
+                <div></div>
+            </div>
+            <div class="dragDiv03" ondragover="fruitOnDragOver(event)" ondrop="fruitDrop(event, 3)">
+                <h3>将不喜欢的水果拖拽至此</h3>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./third/jquery-3.1.1.min.js"></script>
+<!-- 加上版本号可禁用缓存 -->
+<script src="./index.js"></script>
+<!--<script type="text/javascript">-->
+<!--    document.write("<script src='./index.js?v="+Math.random()+"'><\/script>");-->
+<!--</script>-->
+</html>

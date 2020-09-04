@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html 常用标签练习</title>
+</head>
+<body>
+    <a id="maodian1" href="#maodian2">锚点位置1,点击返回锚点2</a> <br/>
+
+    <!-- 文本标签练习 -->
+    <b>加粗</b>
+    <strong>加粗</strong>
+    <i>倾斜</i>
+    <em>倾斜</em>
+    <u>下划线</u>
+    <s>删除线</s>
+    <strike>删除线</strike>
+    <del>删除线</del>
+    <sup>上标</sup>
+    <sub>下标</sub>
+    <span>span标记,行内元素</span>
+    <font face="字体" size="字号(1~7)" color="颜色">font标记(W3C建议废除)</font>
+    <pre>原样输出</pre>
+
+    <br/><br/>
+    <!-- 水平分割线练习 -->
+    <hr/>
+    <hr width="50%" size="10px" color="red" align="right"/>
+    <hr width="100%" size="20px" color="green"/>
+    <br/><br/>
+
+    <br/><br/>
+    <!-- 标题、段落练习 -->
+    <h1>这是 1 号标题</h1>
+    <h2>这是 2 号标题</h2>
+    <h3>这是 3 号标题</h3>
+    <h4>这是 4 号标题</h4>
+    <h5>这是 5 号标题</h5>
+    <h6>这是 6 号标题</h6>
+
+    <p>这是第一段</p>
+    <p>
+        这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
+        这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
+        这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
+        这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
+        这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
+        这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
+        这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
+    </p>
+    <p>这是第三段</p>
+
+    <br/><br/>
+    <!-- 练习 html 字符实体 -->
+    <p>
+        大于号   &gt;
+        小于号   &lt;
+        双引号  &quot;
+        单引号  &apos;(IE不支持)或&#39;
+        &符号  &amp;
+        不间断空格: &nbsp;
+        版权符号:&copy;
+        注册商标:&reg;
+        欧元 &euro;
+        英镑 &pound;
+        日元 &yen;
+    </p>
+
+    <br/><br/>
+    <!-- img 标签练习 -->
+    <img src="../img/bird0.jpg" width="200px" height="100px" alt="这个一张鸟的图片"/>
+    <!-- title 属性规定关于元素的额外信息。 -->
+    <img src="../img/bird.jpg" width="200px" height="100px" alt="这个一张鸟的图片" title="这是图片的 title 属性"/>
+    <img src="../img/bird.jpg" width="200px" alt="这个一张鸟的图片"/>
+    <img src="../img/bird.jpg" alt="这个一张鸟的图片" title="这是图片的 title 属性"/>
+    <img src="https://csdnimg.cn/cdn/content-toolbar/csdn-logo.png?v=20200416.1" alt="这个一张网络图片"/>
+
+    <br/><br/>
+    <!-- 表格练习 -->
+    <table border="1px" cellpadding="10px" cellspacing="0" align="center" width="800px">
+        <caption>我是表格标题</caption>
+        <thead>
+            <!-- th 有加粗效果,普通的 td 则没有 -->
+            <tr>
+                <th>我是表头第一列</th>
+                <th>我是表头第二列</th>
+                <th>我是表头第三列</th>
+            </tr>
+<!--            <tr>-->
+<!--                <td>我是表头第一列</td>-->
+<!--                <td>我是表头第二列</td>-->
+<!--                <td>我是表头第三列</td>-->
+<!--            </tr>-->
+        </thead>
+        <tbody>
+            <tr>
+                <td>我是内容第一列</td>
+                <td>我是内容第二列</td>
+                <td>我是内容第三列</td>
+            </tr>
+            <tr>
+                <td>我是内容第一列</td>
+                <td>我是内容第二列</td>
+                <td>我是内容第三列</td>
+            </tr>
+            <tr>
+                <td>我是内容第一列</td>
+                <td>我是内容第二列</td>
+                <td>我是内容第三列</td>
+            </tr>
+            <tr>
+                <td rowspan="2">我占据了两行</td>
+                <td>我是内容第二列</td>
+                <td>我是内容第三列</td>
+            </tr>
+            <tr>
+                <td>我是内容第二列</td>
+                <td>我是内容第三列</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>我是页脚第一列</td>
+                <td colspan="2">我占据了两列</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br/><br/>
+    <!-- 超链接练习 -->
+    <a href="https://www.baidu.com/">点击跳往百度</a>
+    <a href="https://www.baidu.com/" target="_blank">点击打开新的页面跳往百度</a>
+    <a href="https://www.baidu.com/">
+        <!-- title 属性规定关于元素的额外信息。 -->
+        <img src="../img/bird.jpg" alt="点击图片跳往百度" title="点击图片跳往百度">
+    </a>
+    <br/>
+    <!-- 超链接表现形式 -->
+    <a href="">普通超链接,没有任何行为</a>
+    <a href="#">普通超链接,没有任何行为</a>
+    <a href="../img/bird.jpg">链接到文件</a>
+    <a href="../img/bird.zip">链接到文件</a>
+    <a href="mailto:389093982@qq.com">链接到邮件</a>
+    <a href="https://www.baidu.com/">链接到百度</a>
+    <a href="javascript:;">链接到 空javascript</a>
+    <a href="javascript:window.alert('helloworld');">链接到 javascript</a>
+    <a href="#" onclick="window.alert('helloworld');">点击我</a>
+    <a id="maodian2" href="#maodian1">锚点位置2,点击返回锚点1</a>
+
+    <br/><br/>
+    <!-- 按钮练习 -->
+    <button>我是按钮</button>
+    <button type="button">我是按钮</button>
+    <button type="button" disabled>我是禁用按钮</button>
+
+    <br/><br/>
+    <!-- 测试有序、无序、定义列表 -->
+    <ol>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
+    </ol>
+    <ul>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
+    </ul>
+    <dl>
+        <dt>列表标题1</dt>
+        <dd>列表内容1</dd>
+        <dd>列表内容1</dd>
+        <dd>列表内容1</dd>
+        <dt>列表标题2</dt>
+        <dd>列表内容2</dd>
+        <dd>列表内容2</dd>
+        <dd>列表内容2</dd>
+    </dl>
+
+
+    <br/><br/>
+    <!-- 测试行内元素和块级元素 -->
+    <!-- 行内元素，一行显示 -->
+    <a>行内元素</a>
+    <img src="../img/bird.jpg" with="100px"/>
+    <span>我是行内元素</span>
+    <strong>我也是行内元素</strong>
+    <!-- 块级元素，新行显示 -->
+    <h1>我是块级元素，新行显示</h1>
+    <h2>我是块级元素，新行显示</h2>
+    <h3>我是块级元素，新行显示</h3>
+    <hr/>
+    <p>我是块级元素，新行显示</p>
+    <table border="1px">
+        <tr>
+            <td>我是表格，新行显示</td>
+        </tr>
+    </table>
+
+    <br/><br/>
+    <!-- 测试分区元素 div 和 span -->
+    <span>这是一个区域</span>
+    <span>这是一个区域</span>
+    <span>这是一个区域</span>
+
+    <div>这是一个区域</div>
+    <div>这是一个区域</div>
+    <div>这是一个区域</div>
+
+    <div>
+        <div><div><span>这是一个复杂的区域</span></div></div>
+        <span><div>这是一个复杂的区域</div></span>
+    </div>
+
+    <br/><br/>
+    <!-- 测试空格和换行 -->
+    hello world         <br/>
+    hello world
+
+
+    <br/>
+    <!-- 多个空格都会被显示为一个空格 -->
+    hello      world    <br/>
+    <p>hello      world</p>
+    <pre>hello      world
+
+
+    hello world</pre>
+
+    <br/><br/>
+    <!-- 测试盒子模型 -->
+    <!-- div 盒子 -->
+    <div style="width:100px;height:100px;background-color:grey;">盒子</div>
+    <div style="width:100px;height:100px;background-color:red;">盒子</div>
+
+    <div>
+        <!-- style 属性是通用属性 display:inline-block 将元素变成行内块装元素 -->
+        <div style="width:100px;height:100px;background-color:grey;display:inline-block;">盒子</div>
+        <div style="width:100px;height:100px;background-color:red;display:inline-block;">盒子</div>
+        <div style="width:100px;height:100px;display:inline-block;border: 1px solid red;">盒子</div>
+        <div style="width:100px;height:100px;display:inline-block;border: 5px solid green;">盒子</div>
+        <!-- 测试 border -->
+        <div style="width:100px;height:100px;display:inline-block;
+            border-top: 1px solid red; border-right: 2px dashed green;border-bottom: 3px dotted blue;border-left: 4px inset pink;">盒子</div>
+        <!-- 测试圆角 -->
+        <div style="width:100px;height:100px;background-color:red;display:inline-block;border-radius: 10px;">盒子</div>
+        <div style="width:100px;height:100px;background-color:red;display:inline-block;border-top-left-radius: 10px;">盒子</div>
+        <div style="width:100px;height:100px;background-color:red;display:inline-block;border-top-right-radius: 10px;">盒子</div>
+        <div style="width:100px;height:100px;background-color:red;display:inline-block;border-bottom-right-radius: 10px;">盒子</div>
+        <div style="width:100px;height:100px;background-color:red;display:inline-block;border-bottom-left-radius: 10px;">盒子</div>
+    </div>
+
+    <!-- 测试外边距 -->
+    <!--
+        div嵌套引起的 margin-top 不起作用:
+        对内部的div设置margin-top时,内部对于外部的div并没有产生一个margin值,而是外部的div相对于上面的div产生了一个margin值,
+        这是因为嵌套div中margin-top出现转移,在部分浏览器中,两个嵌套的div,如果外层父元素div的padding值为0,
+        那么内层div的margin-top,margin-bottom值都会转移到父元素也就是外层div身上
+    -->
+    <div style="background-color: pink;">
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 10px;"></div>
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 20px;"></div>
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 30px;"></div>
+    </div>
+    <br/>
+    <!--
+        解决办法：1、给父元素div设置一个padding值
+    -->
+    <div style="background-color: pink;padding: 10px;">
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 10px;"></div>
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 20px;"></div>
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 30px;"></div>
+    </div>
+    <br/>
+
+    <!--
+    解决办法：2、给父元素div设置一个overflow：hidden；在不加overflow:Hidden;的时候,margin-top:这个属性是认不到边的,也就是失效。
+    但是ie浏览器解决了这个问题,火狐、谷歌之类的就会出现失效,所以这是个标准问题,也是个兼容问题。
+    -->
+    <div style="background-color: pink;overflow: hidden;">
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 10px;"></div>
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 20px;"></div>
+        <div style="width: 100px;height: 100px;background-color:yellow;margin: 30px;"></div>
+    </div>
+    <br/>
+
+    <!-- 测试外边距 -->
+    <div style="background-color: pink;padding: 1px;">
+        <div style="height:100px;background-color: yellow;margin: 20px;"></div>
+    </div>
+    <br/>
+    <div style="background-color: pink;padding: 1px;">
+        <div style="height:100px;background-color: yellow;margin-top: 10px;margin-right: 20px;margin-bottom: 30px;margin-left: 40px;"></div>
+    </div>
+    <br/>
+    <!-- 测试内边距 -->
+    <div style="background-color: pink;padding: 10px;">
+        <div style="height:100px;background-color: yellow;"></div>
+    </div>
+    <br/>
+    <div style="background-color: pink;padding-top: 10px; padding-right: 20px;padding-bottom: 30px;padding-left: 40px;">
+        <div style="height:100px;background-color: yellow;"></div>
+    </div>
+
+    <br/><br/>
+    <!--
+        出现间隙问题现象：因为这个换行,导致了这个间隔的出现
+     -->
+    <div style="background-color: pink;">
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
+    </div>
+
+    <!--
+        消除间隙的方法：
+        第一种方法：就是大多数人都会想到的将要转换为inline-block的元素写在一起,不换行就行了,虽然这会使代码可读性降低
+        第二种方法：在要转换为inline-block的元素之间加入注释符
+        第三种方法：将结束标签与下一个开始标签写在一起，这样，他们之间的空格也会被清除掉
+        第四种方法：将元素结束标签的">"放在下一行的开始处
+        第五种方法：将父级font-size置0,行内元素再恢复字体大小
+    -->
+    <div style="background-color: pink;">
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div><div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div><!-- 消除间隙
+        --><div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;">
+        </div><div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"
+            ></div>
+    </div>
+
+    <!--
+        当使用inline-block时,HTML元素之间的空白会显示在页面上,为了保持代码的美观,不建议使用全部写到在一行内或者影响美观的方法
+        将父级font-size置0,行内元素再恢复字体大小。
+    -->
+    <div style="background-color: pink;font-size: 0;">
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
+    </div>
+
+    <br/><br/>
+    <!--
+        测试居中
+        margin:0 auto 设置对象上下间距为0,左右自动。
+        可拆分: margin:0 auto 0 auto(上下)
+        还可拆分为: margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;
+    -->
+    <div style="width: 300px;height: 100px;background-color: pink;margin: 0 auto;">居中测试</div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习 JavaScript</title>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css"/>
+</head>
+<body>
+
+    <!-- 练习 window.onload 方法中添加 onclick 事件 -->
+    <a id="clickMe">练习点击事件</a>
+
+    <br/><br/>
+    <!-- 练习 window.location.href 进行跳转 -->
+    <a onclick="goPage('B')">我是 A 页面,点击跳往 B 页面</a>
+
+    <br/><br/>
+    <!-- 获取屏幕尺寸信息 -->
+    <a onclick="showScreenInfo()">点击获取屏幕尺寸信息</a>
+    <p class="screenInfoBox"></p>
+
+    <br/><br/>
+    <!--
+        测试
+        document.getElementByld()
+        document.getElementsByTagName()
+        document.getElementByClassName()
+    -->
+    <div id="loginBox" style="width: 400px;height: 300px;background-color: lightgray;padding: 20px;margin: 10px 0;">
+        <!-- 这是注释节点：描述用户名 -->
+        <label class="label01">用户名:</label>
+        <input type="text" name="username"/>
+        <br/>
+        <!-- 这是注释节点：描述秘密 -->
+        <label class="label01">密&nbsp;&nbsp;码:</label>
+        <input type="password" name="password"/>
+        <br/><br/>
+    </div>
+
+    <button onclick="testGetElementByld01()">测试 getElementByld</button>
+    <button onclick="testGetElementByTagName01()">测试 getElementByTagName</button>
+    <button onclick="testGetElementByClassName01()">测试 getElementByClassName</button>
+    <button onclick="testHasChildNodes01()">测试 hasChildNodes</button>
+    <button onclick="testGetAttribute01()">测试 getAttribute</button>
+    <button onclick="testSetAttribute01()">测试 setAttribute</button>
+
+    <br/><br/>
+    <div>
+        <ul id="ulNode">
+            <li>我是元素第1项</li>
+            <li>我是元素第2项</li>
+            <li>我是元素第3项</li>
+        </ul>
+    </div>
+
+    <button onclick="testAppendChild01()">测试 appendChild</button>
+    <button onclick="testAppendChild02()">测试 appendChild 2</button>
+    <button onclick="testReplaceChild01()">测试 replaceChild</button>
+    <button onclick="testInsertBefore01()">测试 insertBefore</button>
+    <button onclick="testInsertAfter01()">测试 insertAfter</button>
+    <button onclick="testRemoveChild01()">测试 removeChild</button>
+
+    <br/><br/>
+    <button id="testJson">测试json</button>
+    <!-- 显示 json -->
+    <form>
+        <label>用户名：</label><input type="text" name="userName1"/>
+        <label>密码：</label><input type="password" name="password1"/>
+        <button id="saveJsonObject">保存 json 对象</button>
+        <button id="showJsonObject">显示json 对象</button>
+        <button id="showJsonString">显示json 字符串</button>
+    </form>
+
+    <br/><br/>
+    <!-- 练习 setTimeout 和 setInterval -->
+    <button class="timeoutTest">练习 setTimeout</button>
+    <button class="intervalTest">练习 setInterval</button>
+    <button class="clearTimeoutTest">练习 clearTimeout</button>
+    <button class="clearIntervalTest">练习 clearInterval</button>
+
+    <br/><br/>
+    <!-- 练习事件冒泡：复现 -->
+    <div id="box01" style="width: 300px;height: 300px;background-color: pink;">
+        <div id="box02" style="width: 200px;height: 200px;background-color: salmon;">
+            <div id="box03" style="width: 100px;height: 100px;background-color: sandybrown;">
+            </div>
+        </div>
+    </div>
+    <br/>
+    <!-- 练习事件冒泡：解决 -->
+    <div id="box04" style="width: 300px;height: 300px;background-color: pink;">
+        <div id="box05" style="width: 200px;height: 200px;background-color: salmon;">
+            <div id="box06" style="width: 100px;height: 100px;background-color: sandybrown;">
+            </div>
+        </div>
+    </div>
+
+    <br/><br/>
+    <!-- 练习事件类型 -->
+    <!-- scroll 滚动事件 -->
+    <a id="showDocumentScroll">document 滚动位置：</a>
+    <!-- focus 事件 -->
+    <!-- alert 当你点击弹出框的 " 确定 " 时,你的文本框就失去焦点了,而你点击了之后文本框又获得焦点了,这个时候就陷入死循环了, 用 console.log 测试 -->
+    <!-- <input type="text" name="testonfocus" onfocus="alert('onfocus');"/>-->
+    <input type="text" name="testonfocus" onfocus="console.log('onfocus');"/>
+    <!-- blur 事件 -->
+    <input type="text" name="testonblur" onblur="alert('onblur');"/>
+    <!-- onclick、ondblclick 事件 -->
+    <div onclick="alert('onclick');">点击我</div>
+    <div ondblclick="alert('ondblclick');">双击我</div>
+    <!-- mouse 事件 -->
+    <div style="width:200px; height: 100px;background-color: pink;"
+         id="testMouseEvent" onmousedown="testMouseEvent('onmousedown')" onmouseup="testMouseEvent('onmouseup')"
+         onmouseenter="testMouseEvent('onmouseenter')" onmouseleave="testMouseEvent('onmouseleave')"
+         onmousemove="testMouseEvent('onmousemove')" onmouseout="testMouseEvent('onmouseout')"
+         onmouseover="testMouseEvent('onmouseover')">鼠标进入进出测试</div>
+    <!-- 键盘事件 -->
+    <input type="text" name="showUpperText" onkeydown="showUpperText(event)" class="showUpperText"/> <span class="showUpperText"></span>
+
+    <br/><br/><br/><br/>
+    <!-- dom api 综合练习 -->
+    <div style="text-align: center;">
+        <input type="hidden" name="userId"/>
+        <label>用户名：</label>
+        <input type="text" name="userName2"/>
+        <label>密&nbsp;&nbsp;码：</label>
+        <input type="password" name="password2"/>
+        <label>薪&nbsp;&nbsp;水：</label>
+        <input type="number" name="salary"/><br/>
+        <button style="margin: 10px 0" onclick="submitUserSalaryForm()">提交</button>
+
+        <hr style="margin: 10px"/>
+
+        <table style="width: 1000px;margin: 50px auto;border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th>用户id</th>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>薪水</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

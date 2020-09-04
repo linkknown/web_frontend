@@ -1,0 +1,14 @@
+.bgRed {
+    background-color: red;
+}
+.bgBlue {
+    background-color: blue;
+}
+.bgGreen {
+    background-color: green;
+}
+
+.selectAllDiv input {
+    /* !important 提升指定样式规则的应用优先权 */
+    width: 10px!important;
+}

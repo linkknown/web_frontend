@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用 css</title>
+    <!-- 方式三：链接式 -->
+    <link rel="stylesheet" type="text/css" href="usecss01.css"/>
+     <!-- 方式二：嵌入式 -->
+    <style type="text/css">
+        /* 方式四：导入式 */
+        @import "./usecss02.css";
+        h2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- 测试引入 css 的四种方式 -->
+    <!-- 方式一：行内式 -->
+    <h1 style="color: red;">内联样式</h1>
+    <h2>内部样式</h2>
+    <h3>外部样式</h3>
+    <h4>导入样式</h4>
+</body>
+</html>

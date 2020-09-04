@@ -1,0 +1,48 @@
+/* 基本选择器 */
+/* 通配符选择器,用于 css reset */
+*{
+    padding: 0;
+    margin: 0;
+}
+/* id 选择器 */
+#div01 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+/* class 选择器 */
+.div02 {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    margin: 10px;
+}
+/* 元素选择器 */
+p {
+    color: red;
+}
+/* 群组选择器 */
+.div03,.div04,.div05 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    margin: 10px;
+    display: inline-block;
+}
+/* 伪类选择器 */
+a {
+  color: black;
+}
+a:hover {
+    color: red;
+}
+.div06,.div07,.div08 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    margin: 10px;
+}
+.div06:hover {
+    background-color: blue;
+    width: 200px;
+}
