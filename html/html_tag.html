@@ -8,6 +8,7 @@
     <a id="maodian1" href="#maodian2">锚点位置1,点击返回锚点2</a> <br/>
 
     <!-- 文本标签练习 -->
+    我是默认文字样式
     <b>加粗</b>
     <strong>加粗</strong>
     <i>倾斜</i>
@@ -19,8 +20,23 @@
     <sup>上标</sup>
     <sub>下标</sub>
     <span>span标记,行内元素</span>
-    <font face="字体" size="字号(1~7)" color="颜色">font标记(W3C建议废除)</font>
+    <!--<font face="字体" size="字号(1~7)" color="颜色">font标记(W3C建议废除)</font>-->
+    <font face="verdana" size="6" color="red">font标记(W3C建议废除)</font>
     <pre>原样输出</pre>
+    <!-- pre 里面可以包含特殊字符 -->
+    <pre>
+        <>&'"
+    </pre>
+    <!-- pre 不能包含标签，pre 里面的标签不会原样输出 -->
+    <pre>
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <users>
+            <user>
+                <userName>admin</userName>
+            </user>
+        </users>
+    </pre>
+
 
     <br/><br/>
     <!-- 水平分割线练习 -->
@@ -38,6 +54,7 @@
     <h5>这是 5 号标题</h5>
     <h6>这是 6 号标题</h6>
 
+    <!-- 行间距、段落间距是不一样的 -->
     <p>这是第一段</p>
     <p>
         这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
@@ -49,6 +66,11 @@
         这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段这是第二段
     </p>
     <p>这是第三段</p>
+
+    <!-- 练习换行 -->
+    <p>我是段落中的文字，我一行显示</p>
+    <p>我是段落中的文字，<br/>我一行显示</p>
+    <p>我是段落中的文字，<br/><br/><br/>我一行显示</p>
 
     <br/><br/>
     <!-- 练习 html 字符实体 -->
@@ -68,11 +90,12 @@
 
     <br/><br/>
     <!-- img 标签练习 -->
+    <img src="../img/bird0.jpg" width="200px" height="100px"/>
     <img src="../img/bird0.jpg" width="200px" height="100px" alt="这个一张鸟的图片"/>
     <!-- title 属性规定关于元素的额外信息。 -->
-    <img src="../img/bird.jpg" width="200px" height="100px" alt="这个一张鸟的图片" title="这是图片的 title 属性"/>
-    <img src="../img/bird.jpg" width="200px" alt="这个一张鸟的图片"/>
     <img src="../img/bird.jpg" alt="这个一张鸟的图片" title="这是图片的 title 属性"/>
+    <img src="../img/bird.jpg" width="200px" alt="这是一张鸟的图片"/>
+    <img src="../img/bird.jpg" width="200px" height="100px" alt="这个一张鸟的图片" title="这是图片的 title 属性"/>
     <img src="https://csdnimg.cn/cdn/content-toolbar/csdn-logo.png?v=20200416.1" alt="这个一张网络图片"/>
 
     <br/><br/>
@@ -137,7 +160,8 @@
     <br/>
     <!-- 超链接表现形式 -->
     <a href="">普通超链接,没有任何行为</a>
-    <a href="#">普通超链接,没有任何行为</a>
+    <!-- # 代表页面顶部锚点 -->
+    <a href="#">普通超链接,链接到顶部锚点</a>
     <a href="../img/bird.jpg">链接到文件</a>
     <a href="../img/bird.zip">链接到文件</a>
     <a href="mailto:389093982@qq.com">链接到邮件</a>
@@ -146,6 +170,9 @@
     <a href="javascript:window.alert('helloworld');">链接到 javascript</a>
     <a href="#" onclick="window.alert('helloworld');">点击我</a>
     <a id="maodian2" href="#maodian1">锚点位置2,点击返回锚点1</a>
+    <!-- 新窗口打开 -->
+    <a href="https://www.baidu.com/" target="_blank">链接到百度</a>
+
 
     <br/><br/>
     <!-- 按钮练习 -->
@@ -156,24 +183,32 @@
     <br/><br/>
     <!-- 测试有序、无序、定义列表 -->
     <ol>
-        <li>我是无序列表</li>
-        <li>我是无序列表</li>
-        <li>我是无序列表</li>
-        <li>我是无序列表</li>
-        <li>我是无序列表</li>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
+        <li>我是有序列表</li>
     </ol>
     <ul>
-        <li>我是有序列表</li>
-        <li>我是有序列表</li>
-        <li>我是有序列表</li>
-        <li>我是有序列表</li>
-        <li>我是有序列表</li>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
+        <li>我是无序列表</li>
     </ul>
     <dl>
         <dt>列表标题1</dt>
         <dd>列表内容1</dd>
         <dd>列表内容1</dd>
         <dd>列表内容1</dd>
+
+        <dt>列表标题2</dt>
+        <dd>列表内容2</dd>
+        <dd>列表内容2</dd>
+        <dd>列表内容2</dd>
+
         <dt>列表标题2</dt>
         <dd>列表内容2</dd>
         <dd>列表内容2</dd>
@@ -194,6 +229,7 @@
     <h3>我是块级元素，新行显示</h3>
     <hr/>
     <p>我是块级元素，新行显示</p>
+    <p>我是块级元素，新行显示</p>
     <table border="1px">
         <tr>
             <td>我是表格，新行显示</td>
@@ -202,13 +238,16 @@
 
     <br/><br/>
     <!-- 测试分区元素 div 和 span -->
-    <span>这是一个区域</span>
-    <span>这是一个区域</span>
-    <span>这是一个区域</span>
+    <span>我是一个区域</span>
+    <span>我是一个区域</span>
+    <span>我是一个区域</span>
+    <span>我是一个区域<span>我是一个子区域<span>我是一个子子区域</span></span></span>
+
 
     <div>这是一个区域</div>
     <div>这是一个区域</div>
     <div>这是一个区域</div>
+    <div>我是一个区域<div>我是一个子区域<div>我是一个子子区域</div></div></div>
 
     <div>
         <div><div><span>这是一个复杂的区域</span></div></div>
@@ -229,6 +268,13 @@
 
 
     hello world</pre>
+    <!--
+        在html代码中每输入bai一个转义字符&nbsp就表示一个空格，输入十个&nbsp，页面中就显示10个空格位置。
+        而在html代码中输入空格，不管输入多少个空格，最终在页面中显示的空格位置只有一个。
+    -->
+    hello&nbsp;world  <br/>
+    hello&nbsp;&nbsp;world <br/>
+    hello&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world <br/>
 
     <br/><br/>
     <!-- 测试盒子模型 -->
@@ -300,6 +346,18 @@
     <div style="background-color: pink;padding: 10px;">
         <div style="height:100px;background-color: yellow;"></div>
     </div>
+
+    <br/>
+    <!--
+        margin\padding 四个值分别表示：上右下左方向的值
+        margin\padding: 10px;                   上右下左四个方向都是 10px
+        margin\padding: 10px 20px;              上下 10px 左右 20px
+        margin\padding: 10px 20px 30px 40px;    上 10px 右 20px 下 30px 左 40px
+    -->
+    <div style="background-color: pink;padding: 10px 20px 30px 40px;">
+        <div style="height:100px;background-color: yellow;"></div>
+    </div>
+
     <br/>
     <div style="background-color: pink;padding-top: 10px; padding-right: 20px;padding-bottom: 30px;padding-left: 40px;">
         <div style="height:100px;background-color: yellow;"></div>
@@ -307,6 +365,7 @@
 
     <br/><br/>
     <!--
+        inline-block：间隙问题
         出现间隙问题现象：因为这个换行,导致了这个间隔的出现
      -->
     <div style="background-color: pink;">
@@ -315,6 +374,7 @@
         <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
     </div>
 
+    <br/>
     <!--
         消除间隙的方法：
         第一种方法：就是大多数人都会想到的将要转换为inline-block的元素写在一起,不换行就行了,虽然这会使代码可读性降低
@@ -331,14 +391,16 @@
             ></div>
     </div>
 
+    <br/>
     <!--
+        消除间隙：
         当使用inline-block时,HTML元素之间的空白会显示在页面上,为了保持代码的美观,不建议使用全部写到在一行内或者影响美观的方法
         将父级font-size置0,行内元素再恢复字体大小。
     -->
     <div style="background-color: pink;font-size: 0;">
-        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
-        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
-        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;"></div>
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;font-size: 14px;">我是文字</div>
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;font-size: 14px;">我是文字</div>
+        <div style="width: 100px;height: 100px;background-color: yellow;display: inline-block;font-size: 14px;">我是文字</div>
     </div>
 
     <br/><br/>
