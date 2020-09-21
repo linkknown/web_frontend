@@ -62,13 +62,22 @@
 
     <br/><br/>
     <!-- 练习 float 浮动 -->
+    <!--
+        练习浮动:
+        1、浮动元素不占据父级元素空间：脱离文档流
+        2、浮动元素会与后面非浮动兄弟元素重叠（需要清除浮动）
+     -->
     <div>
         <div class="floatDiv floatLeft"></div>
         <div class="floatDiv floatLeft"></div>
         <div class="floatDiv floatRight"></div>
         <div class="floatDiv floatRight"></div>
+        <div style="height: 20px;background-color: greenyellow;"></div>
+
+        <div style="clear: both;"></div>
+        <div style="height: 20px;background-color: greenyellow;"></div>
     </div>
-    <div style="clear: both;"></div>
+
 
     <div class="floatUl">
         <ul>
@@ -103,7 +112,7 @@
     </div>
     <div style="clear: both;"></div>
 
-    <div class="floatArea">
+    <div class="floatDiv2">
         <div class="left"></div>
         <div class="center"></div>
         <div class="right"></div>
@@ -111,18 +120,30 @@
     <div style="clear: both;"></div>
 
     <br/><br/>
-    <!-- 练习 position 定位 -->
-    <!-- 练习相对定位 -->
+    <div class="floatDiv3">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div style="clear: both;"></div>
+
+    <br/><br/>
+    <!-- css 第三种定位方式：position 定位，练习 position 定位 -->
+    <!-- relative 定位：相对于自己定位，进行适当地偏移 -->
+    <!--
+        使用 position 定位需要结合偏移量：left: 左偏移  right: 右偏移  top: 上偏移  bottom: 下偏移
+    -->
     <div>
         <div class="relativeDiv"></div>
         <div class="relativeDiv"></div>
     </div>
     <br/>
-    <!-- 练习绝对定位 -->
+    <!-- absolute 练习绝对定位 -->
     <div>
         <div class="absoluteDiv"></div>
         <div class="absoluteDiv absoluteDiv1A"></div>
         <div class="absoluteDiv absoluteDiv1B"></div>
+        <!-- absolute 定位：相对于最近的已定位（非 static 值的 position 定位）祖先（父级）元素进行偏移 -->
         <div style="position: relative;background-color:#d0d0d0;width: 100%;height: 300px;">
             <div class="absoluteDiv absoluteDiv2"></div>
             <div class="absoluteDiv absoluteDiv3"></div>
@@ -160,6 +181,7 @@
     <div class="backgroundDiv3"></div>
     <div class="backgroundDiv4"></div>
     <div class="backgroundDiv5"></div>
+    <div class="backgroundDiv6"></div>
 
     <br/><br/>
     <!-- 练习 opacity 透明度 -->
@@ -177,13 +199,14 @@
     <!-- 测试旋转 rotate 旋转 -->
     <div class="transformDiv"></div>
     <div class="transformDiv" style="transform: rotateX(60deg);"></div>
-    <div class="transformDiv" style="transform: rotateX(90deg);"></div>
+    <div class="transformDiv" style="transform: rotateX(89deg);"></div>     <br/>
     <div class="transformDiv"></div>
     <div class="transformDiv" style="transform: rotateY(60deg);"></div>
-    <div class="transformDiv" style="transform: rotateY(90deg);"></div>
+    <div class="transformDiv" style="transform: rotateY(89deg);"></div>     <br/>
     <div class="transformDiv"></div>
     <div class="transformDiv" style="transform: rotateZ(60deg);"></div>
-    <div class="transformDiv" style="transform: rotateZ(90deg);"></div>
+    <div class="transformDiv" style="transform: rotateZ(89deg);"></div>     <br/>
+    <div class="transformDiv"></div>
     <div class="transformDiv" style="transform: rotateX(30deg) rotateY(30deg) rotateZ(30deg);"></div>
 
     <br/>
@@ -207,11 +230,14 @@
     <!-- 测试 scale 缩放 -->
     <div class="transformDiv"></div>
     <div class="transformDiv" style="transform: scaleX(0.5);"></div>
-    <div class="transformDiv" style="transform: scaleX(2);"></div>
+    <div class="transformDiv" style="transform: scaleX(2);"></div>          <br/>
+    <div class="transformDiv"></div>
     <div class="transformDiv" style="transform: scaleY(0.5);"></div>
-    <div class="transformDiv" style="transform: scaleY(2);"></div>
+    <div class="transformDiv" style="transform: scaleY(2);"></div>          <br/>
+    <div class="transformDiv"></div>
     <div class="transformDiv" style="transform: scaleZ(0.5);"></div>
-    <div class="transformDiv" style="transform: scaleZ(2);"></div>
+    <div class="transformDiv" style="transform: scaleZ(2);"></div>          <br/>
+    <div class="transformDiv"></div>
     <div class="transformDiv" style="transform: scaleX(0.5) scaleY(0.5) scaleZ(0.5);"></div>
     <br/>
     <!-- 测试 skew 倾斜 -->
@@ -226,6 +252,7 @@
     <div class="transitionDiv transitionDiv02"></div>
     <div class="transitionDiv transitionDiv03"></div>
     <div class="transitionDiv transitionDiv04"></div>
+    <div class="transitionDiv transitionDiv05"></div>
 
     <br/><br/>
     <!-- 测试 css 动画效果 keyframes -->
@@ -247,36 +274,36 @@
     <!-- 如何给 div 设置 border 样式,且 div 还不变形 -->
     <div class="boxSizeDiv05">
         <ul>
-            <li><img src="../img/bird.jpg"></li>
-            <li><img src="../img/bird.jpg"></li>
-            <li><img src="../img/bird.jpg"></li>
+            <li><img src="../img/bird.jpg"/></li>
+            <li><img src="../img/bird.jpg"/></li>
+            <li><img src="../img/bird.jpg"/></li>
         </ul>
     </div>
 
     <div style="clear: left;"></div>
     <div class="boxSizeDiv06">
         <ul>
-            <li><img src="../img/bird.jpg"></li>
-            <li><img src="../img/bird.jpg"></li>
-            <li><img src="../img/bird.jpg"></li>
+            <li><img src="../img/bird.jpg"/></li>
+            <li><img src="../img/bird.jpg"/></li>
+            <li><img src="../img/bird.jpg"/></li>
         </ul>
     </div>
 
     <div style="clear: left;"></div>
     <div class="boxSizeDiv07">
         <ul>
-            <li><img src="../img/bird.jpg"></li>
-            <li><img src="../img/bird.jpg"></li>
-            <li><img src="../img/bird.jpg"></li>
+            <li><img src="../img/bird.jpg"/></li>
+            <li><img src="../img/bird.jpg"/></li>
+            <li><img src="../img/bird.jpg"/></li>
         </ul>
     </div>
 
     <div style="clear: left;"></div>
     <div class="boxSizeDiv08">
         <ul>
-            <li><img src="../img/bird.jpg"></li>
-            <li><img src="../img/bird.jpg"></li>
-            <li><img src="../img/bird.jpg"></li>
+            <li><img src="../img/bird.jpg"/></li>
+            <li><img src="../img/bird.jpg"/></li>
+            <li><img src="../img/bird.jpg"/></li>
         </ul>
     </div>
 
@@ -490,5 +517,7 @@
        <div class="div01"></div>
        <div class="div02"></div>
     </div>
+
+    <br/><br/><br/><br/><br/>
 </body>
 </html>

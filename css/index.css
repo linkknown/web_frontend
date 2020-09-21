@@ -66,24 +66,44 @@
     background-color: green;
 }
 
-.floatArea .left {
+.floatDiv2 .left {
     height: 100px;
     width: 10%;
     background-color: pink;
     float: left;
 }
-.floatArea .center {
+.floatDiv2 .center {
     height: 100px;
     width: 80%;
     background-color: gray;
     float: left;
 }
-.floatArea .right {
+.floatDiv2 .right {
     height: 100px;
     width: 10%;
     background-color: blue;
     float: right;
 }
+/* 索引从 1 开始 */
+.floatDiv3 > div:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    float: left;
+}
+.floatDiv3 > div:nth-child(2) {
+    width: 300px;
+    height: 200px;
+    background-color: green;
+    float: left;
+}
+.floatDiv3 > div:nth-child(3) {
+    width: 700px;   /* 宽度分别是 600、700、800 时的显示效果 */
+    height: 200px;
+    background-color: blue;
+    float: left;
+}
+
 
 /* 练习 position 定位 */
 /* 练习相对定位 */
@@ -257,6 +277,12 @@
     height: 500px;
     display: inline-block;
     background: url("../img/run.gif") no-repeat;
+}
+.backgroundDiv6 {
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    background: url("../img/run.gif") no-repeat;
     background-size: 100% 100%;
 }
 
@@ -289,8 +315,8 @@
 .transformDiv {
     width: 100px;
     height: 100px;
-    background-color: lightblue;
-    margin: 20px;
+    background-color: deeppink;
+    margin: 30px;
     display: inline-block;
 }
 
@@ -302,19 +328,24 @@
     margin: 20px 50px;
     cursor: pointer;
 }
-
 .transitionDiv01 {
+    background-color: blue;
+}
+.transitionDiv01:hover {
+    width: 400px;
+}
+.transitionDiv02 {
     background-color: blue;
     transition-property: width;
     transition-duration: 3s;
     transition-timing-function: linear;
     transition-delay: 1s;
 }
-.transitionDiv01:hover {
+.transitionDiv02:hover {
     width: 400px;
 }
 
-.transitionDiv02 {
+.transitionDiv03 {
     background-color: blue;
     transition: width 3s linear 1s;
     /* 和下面等价 */
@@ -323,21 +354,21 @@
     /*transition-timing-function: linear;*/
     /*transition-delay: 1s;*/
 }
-.transitionDiv02:hover {
+.transitionDiv03:hover {
     width: 400px;
 }
 
-.transitionDiv03 {
+.transitionDiv04 {
     background-color: blue;
     /* 同时过渡多个属性 */
     transition: width 3s linear, background-color 3s linear;
 }
-.transitionDiv03:hover {
+.transitionDiv04:hover {
     width: 400px;
     background-color: yellow;
 }
 
-.transitionDiv04 {
+.transitionDiv05 {
     background-color: blue;
     /*transition: width 3s ease;*/
     /*transition: width 3s ease-in;*/
@@ -346,7 +377,7 @@
     /* 使用贝塞尔曲线 */
     transition: width 3s cubic-bezier(0.3, 0.72, 0.74, 0.25);
 }
-.transitionDiv04:hover {
+.transitionDiv05:hover {
     width: 400px;
 }
 
@@ -377,6 +408,7 @@
 }
 
 .animationDiv02 {
+    /* 动画简写 */
     animation: showAnimation02 3s linear infinite;
 }
 @keyframes showAnimation02 {
@@ -391,11 +423,11 @@
 }
 
 .animationDiv03 {
-    /* 延迟 1s 执行 */
+    /* 延迟 1s 执行,重复执行 */
     animation: showAnimation02 3s linear 1s infinite;
 }
 .animationDiv04 {
-    /* 延迟 1s 执行 */
+    /* 延迟 1s 执行,执行一次 */
     animation: showAnimation02 3s linear 1s;
 }
 .animationDiv05 {
@@ -403,7 +435,7 @@
     animation: showAnimation02 3s linear 1s forwards;
 }
 .animationDiv06 {
-    /* 延迟 1s 执行,当动画完成后,保持最后一个属性值 */
+    /* 动画进度精确控制 */
     animation: showAnimation06 3s linear infinite;
 }
 /* 多个进度值 */

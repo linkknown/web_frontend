@@ -7,23 +7,89 @@
 </head>
 <body>
     <!-- 练习基本选择器 -->
-    <!-- 练习 id 选择器 -->
+    <!-- 练习 id 选择器，id不能重复 -->
     <div id="div01"></div>
-    <!-- 练习 class 选择器 -->
+<!--    <div id="div01"></div>-->
+
+    <!-- 练习 class 选择器，可以重复 -->
     <div class="div02"></div>
     <div class="div02"></div>
     <div class="div02"></div>
+
     <!-- 练习元素选择器 -->
     <p>我是段落一</p>
     <p>我是段落二</p>
     <p>我是段落三</p>
+
     <!-- 练习群组选择器 -->
     <div class="div03"></div>
     <div class="div04"></div>
     <div class="div05"></div>
 
-    <!-- 练习伪类选择器-->
-    <a>我是超链接,点我</a>
+    <!-- 练习层级选择器 -->
+    <table id="table" cellpadding="10px" cellspacing="0" border="1px">
+        <tr>
+            <th><span>我是表格元素</span></th>
+            <th><span>我是表格元素</span></th>
+            <th><span>我是表格元素</span></th>
+            <th><span>我是表格元素</span></th>
+            <th><span>我是表格元素</span></th>
+        </tr>
+        <tr>
+            <td>我是表格元素</td>
+            <td>我是表格元素</td>
+            <td>我是表格元素</td>
+            <td>我是表格元素</td>
+            <td>我是表格元素</td>
+        </tr>
+        <tr>
+            <td>我是表格元素</td>
+            <td>我是表格元素</td>
+            <td>我是表格元素</td>
+            <td>我是表格元素</td>
+            <td>我是表格元素</td>
+        </tr>
+    </table>
+
+    <!-- 练习伪类选择器 -->
+    <a href="https://www.baidu.com">我是超链接，点我</a>
+    <a href="https://www.baidu.com/1">我是超链接，点我</a>
+    <a href="https://www.baidu.com/2">我是超链接，点我</a>
+    <a href="https://www.baidu.com/3">我是超链接，点我</a>
+    <a href="https://www.baidu.com/4">我是超链接，点我</a>
+
+    用户名：<input type="text" name="userName" value="我是用户名"/>
+
     <div class="div06"></div>
+
+    <input class="input01" type="radio" name="fruit"/>苹果
+    <input class="input01" type="radio" name="fruit"/>香蕉
+    <input class="input01" type="radio" name="fruit"/>西瓜
+
+    昵称：<input class="input02" type="text" name="nickName" value="昵称"/>
+    昵称：<input class="input02" type="text" name="nickName" value="昵称" disabled/>
+
+
+    <ul class="ul01">
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li></li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li name="liNode1">我是列表元素</li>
+        <li name="liNode2">我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+        <li>我是列表元素</li>
+    </ul>
 </body>
 </html>

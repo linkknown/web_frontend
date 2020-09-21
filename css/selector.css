@@ -29,14 +29,43 @@ p {
     margin: 10px;
     display: inline-block;
 }
+
+/* 层级选择器了解 后代选择器和父子选择器 即可 */
+/* 后代选择器（包含父子和隔代） */
+#table th {
+    color: green;
+    padding: 10px 30px;
+}
+
+/* 父子选择器 */
+tr > td {
+    padding: 10px;
+    color: blue;
+    text-align: center;
+}
+
+
 /* 伪类选择器 */
 a {
-  color: black;
+    color: black;
+}
+a:link {
+    color: yellow;
+}
+a:visited {
+    color: green;
+}
+a:active {
+    color: blue;
 }
 a:hover {
     color: red;
 }
-.div06,.div07,.div08 {
+input:focus {
+    color: red;
+}
+
+.div06 {
     width: 100px;
     height: 100px;
     background-color: green;
@@ -45,4 +74,45 @@ a:hover {
 .div06:hover {
     background-color: blue;
     width: 200px;
+}
+
+/* 表单状态选择器 */
+.input01:checked {
+    margin-right: 50px;
+}
+.input02:enabled {
+    color: red;
+}
+.input02:disabled {
+    color: blue;
+}
+
+/* 子元素位置选择器 */
+.ul01 > li:first-child {
+    color: red;
+}
+.ul01 > li:last-child {
+    color: blue;
+}
+.ul01 > li:nth-child(2) {
+    color: green;
+}
+.ul01 > li:nth-last-child(2) {
+    color: green;
+}
+/* 没有子元素的选择器 */
+.ul01 > li:empty {
+    margin-top: 20px;
+}
+/* 否定选择器 */
+.ul01 > li:not(:empty) {
+    font-size: 20px;
+}
+/* 包含 name 属性的 li 节点 */
+.ul01 > li[name] {
+    color: pink;
+}
+/* 包含 name 属性值为 liNode2 的 li 节点*/
+.ul01 > li[name='liNode2'] {
+    color: gold;
 }
