@@ -607,125 +607,113 @@
     vertical-align: top;
 }
 
-/* 弹性盒子，浮动需要 clear,麻烦些 */
-.notFlexDiv div {
-    width: 200px;
-    height: 200px;
-    background-color: pink;
-    float: left;
-    margin: 30px;
-}
-.flexDiv {
-    display: inline-flex;
-    flex-wrap: wrap;
-    /* 其它特性自行了解 */
-}
+/* 弹性盒子，浮动需要 clear,麻烦些,弹性盒子更灵活 */
 .flexDiv div {
     width: 200px;
-    height: 200px;
+    height: 80px;
     background-color: lightgoldenrodyellow;
     margin: 30px;
 }
-
-/* flex 补位问题 */
-.flexDiv2,.flexDiv3 {
+.flexDiv01 {
     display: inline-flex;
+
+    /* 设置主轴方向 */
+    flex-direction: row;
+    /*flex-direction: column;*/
+    /*flex-direction: row-reverse;*/
+    /*flex-direction: column-reverse;*/
+
+    /* 控制是否换行 */
+    /*flex-wrap: nowrap;*/
     flex-wrap: wrap;
-    justify-content: center;
+
+    /* 子项在主轴方向上的对齐方式 */
+    justify-content: flex-start;
+    /*justify-content: flex-end;*/
+    /*justify-content: center;*/
+    /*justify-content: space-between;*/
+    /*justify-content: space-evenly;*/
+    /*justify-content: space-around;*/
 }
-.flexDiv2 div {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    margin: 30px;
-}
-.flexDiv3 div {
-    width: 200px;
-    height: 200px;
-    background-color: green;
-    margin: 30px;
-}
-.flexDiv3 .flexPlaceHolderDiv {
-    cursor: default;
-    height: 0;
-}
+
+
 
 /* flex 和 inline-flex 的区别 */
-.flexDiv4 > .flex {
+.flexDiv02 > .flex {
     display: flex;
     background-color: #d0d0d0;
 }
-.flexDiv4 > .flex > div {
+.flexDiv02 > .flex > div {
     width: 100px;
     height: 100px;
     border: 2px solid red;
 }
-.flexDiv4 > .flex > div:last-child {
+.flexDiv02 > .flex > div:last-child {
     height: 120px;
 }
 
-.flexDiv4 > .inlineFlex {
+.flexDiv02 > .inlineFlex {
     display: inline-flex;
     background-color: #ffbcbc;
 }
-.flexDiv4 > .inlineFlex > div {
+.flexDiv02 > .inlineFlex > div {
     width: 100px;
     height: 100px;
     border: 2px solid green;
 }
-.flexDiv4 > .inlineFlex > div:last-child {
+.flexDiv02 > .inlineFlex > div:last-child {
     height: 120px;
 }
 
-.flexDiv4 > .flex2 {
+.flexDiv02 > .flex2 {
     display: flex;
     background-color: #d0d0d0;
 }
-.flexDiv4 > .flex2 > div {
+.flexDiv02 > .flex2 > div {
     width: 100px;
     height: 100px;
     border: 2px solid red;
 }
-.flexDiv4 > .flex2 > div:last-child {
+.flexDiv02 > .flex2 > div:last-child {
     height: 120px;
     flex-grow: 1;
 }
 
-.flexDiv4 > .inlineFlex2 {
+.flexDiv02 > .inlineFlex2 {
     display: inline-flex;
     background-color: #ffbcbc;
     width: 1000px;
 }
-.flexDiv4 > .inlineFlex2 > div {
+.flexDiv02 > .inlineFlex2 > div {
     width: 100px;
     height: 100px;
     border: 2px solid green;
 }
-.flexDiv4 > .inlineFlex2 > div:last-child {
+.flexDiv02 > .inlineFlex2 > div:last-child {
     height: 120px;
     flex-grow: 1;
 }
 
-.flexDiv4 > .inlineFlex3 {
+.flexDiv02 > .inlineFlex3 {
     display: inline-flex;
     background-color: #ffbcbc;
     width: 1000px;
 }
-.flexDiv4 > .inlineFlex3 > div {
+.flexDiv02 > .inlineFlex3 > div {
     width: 100px;
     height: 100px;
     border: 2px solid green;
 }
-.flexDiv4 > .inlineFlex3 > div:nth-child(1) {
+.flexDiv02 > .inlineFlex3 > div:nth-child(1) {
     flex-grow: 4;
 }
-.flexDiv4 > .inlineFlex3 > div:nth-child(2) {
+.flexDiv02 > .inlineFlex3 > div:nth-child(2) {
     flex-grow: 3;
 }
-.flexDiv4 > .inlineFlex3 > div:nth-child(3) {
+.flexDiv02 > .inlineFlex3 > div:nth-child(3) {
     flex-grow: 2;
 }
-.flexDiv4 > .inlineFlex3 > div:nth-child(4) {
+.flexDiv02 > .inlineFlex3 > div:nth-child(4) {
     flex-grow: 1;
 }
 
