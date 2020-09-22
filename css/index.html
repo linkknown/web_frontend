@@ -353,7 +353,8 @@
     <br/><br/>
     <!--
         display:flex\inline-flex 弹性盒子
-        弹性盒子，浮动需要 clear,麻烦些,弹性盒子更灵活
+
+        弹性盒子，可以替代 float 布局（浮动需要 clear,麻烦些）弹性盒子更灵活
     -->
     <div class="flexDiv flexDiv01">
         <div>1</div>
@@ -423,10 +424,11 @@
     </div>
 
     <br/><br/>
+    <!-- nav aside section footer heaer article 都是块级元素，本质上都是一个 div，样式还需要自己设计 -->
     <div class="layoutDiv2">
         <nav>导航栏</nav>
         <aside>侧边栏</aside>
-        <section>内容区域</section>
+        <section>内容区域 <article>文章区域</article></section>
         <footer>底边栏</footer>
     </div>
 
@@ -444,6 +446,7 @@
     <br/><br/>
     <!-- 练习 linear-gradient -->
     <div class="linearGradientDiv">
+        <div></div>
         <div></div>
         <div></div>
         <div></div>

@@ -763,6 +763,12 @@
     background-color: gold;
     float: left;
 }
+.layoutDiv2 article {
+    height: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: fuchsia;
+}
 .layoutDiv2 footer {
     clear: left;
     height: 10%;
@@ -817,22 +823,26 @@
 }
 .linearGradientDiv div:nth-child(5) {
     /* 百分数是位置 */
+    background-image: linear-gradient(to right, red, red, green, green, blue, blue);
+}
+.linearGradientDiv div:nth-child(6) {
+    /* 百分数是位置 */
     background-image: linear-gradient(to right, red, red 33%, green 33%, green 66%, blue 66%, blue 100%);
 }
-.linearGradientDiv div:nth-child(6),.linearGradientDiv div:nth-child(7) {
+.linearGradientDiv div:nth-child(7),.linearGradientDiv div:nth-child(8) {
     width: 100px;
     height: 100px;
     padding: 5px;
     border-radius: 50%;
-    background-image: -webkit-linear-gradient(top, red 0%, blue 30%, yellow 60%, green 90%);
-    background-image: -moz-linear-gradient(top, red 0%, blue 30%, yellow 60%, green 90%);
-    background-image: linear-gradient(top, red 0%, blue 30%, yellow 60%, green 90%);
+    /*background-image: -webkit-linear-gradient(to bottom, red 0%, blue 30%, yellow 60%, green 90%);*/
+    /*background-image: -moz-linear-gradient(to bottom, red 0%, blue 30%, yellow 60%, green 90%);*/
+    background-image: linear-gradient(to bottom, red 0%, blue 30%, yellow 60%, green 90%);
 }
-.linearGradientDiv div:nth-child(7) {
+.linearGradientDiv div:nth-child(8) {
     /* 需要调整才能顶部对齐 */
     vertical-align: top;
 }
-.linearGradientDiv div:nth-child(7) .linearGradientBox {
+.linearGradientDiv div:nth-child(8) .linearGradientBox {
     width:100%;
     height:100%;
     border-radius:50%;
