@@ -328,22 +328,27 @@
 
     <br/><br/>
     <!-- 测试 display 属性 -->
-    <div class="displayDiv displayDiv01"></div>
-    <div class="displayDiv displayDiv02"></div>
+    <!-- display:none 隐藏元素 -->
+    <div class="displayDiv displayDiv01">我是隐藏的 div</div>
 
-    <!-- inline 宽高不定，由内容决定 -->
+    <!-- display:block 块级元素，可以设置宽高，换行显示 -->
+    <div class="displayDiv displayDiv02">我是块级元素</div>
+    <div class="displayDiv displayDiv02">我是块级元素</div>
+
+    <!-- display:inline 无法设置宽高（设置宽高无效），宽高不定，由内容决定，一行显示 -->
     <div class="displayDiv displayDiv03">我是 inline 中的元素</div>
-    <div class="displayDiv displayDiv04">我是 inline 中的元素2我是 inline 中的元素2</div>  <br/>
+    <div class="displayDiv displayDiv03">我是 inline 中的元素2我是 inline 中的元素2</div>  <br/>
 
-    <!-- inline-block 同时具备内联元素、块状元素的特点,一行显示,宽高可设置 -->
+    <!--
+        display: inline-block 同时具备内联元素、块状元素的特点,一行显示,宽高可设置
+        额外问题：有基线对齐问题
+     -->
+    <div class="displayDiv displayDiv04">我是 inline-block 中的元素</div>
+    <div class="displayDiv displayDiv04">我是 inline-block 中的元素2我是 inline-block 中的元素2</div>      <br/>
+
+    <!-- 使用 vertical-align 消除基线对齐问题 -->
     <div class="displayDiv displayDiv05">我是 inline-block 中的元素</div>
-    <div class="displayDiv displayDiv06">我是 inline-block 中的元素2</div>      <br/>
-
-    <div class="displayDiv displayDiv07">我是 inline-block 中的元素</div>
-    <div class="displayDiv displayDiv08">我是 inline-block 中的元素2我是 inline-block 中的元素2</div>  <br/>
-
-    <div class="displayDiv displayDiv09">我是 inline-block 中的元素</div>
-    <div class="displayDiv displayDiv10">我是 inline-block 中的元素2我是 inline-block 中的元素2</div>  <br/>
+    <div class="displayDiv displayDiv05">我是 inline-block 中的元素2我是 inline-block 中的元素2</div>  <br/>
 
     <br/><br/>
     <!-- 弹性盒子 -->

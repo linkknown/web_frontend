@@ -582,22 +582,27 @@
 
 /* 测试 display 属性 */
 .displayDiv {
-    width: 100px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
     background-color: orange;
     margin: 10px;
 }
-.displayDiv03,.displayDiv04 {
+.displayDiv01 {
+    display: none;
+}
+.displayDiv02 {
+    display: block;
+}
+
+.displayDiv03 {
     display: inline;
 }
-.displayDiv05,.displayDiv06 {
+.displayDiv04 {
     display: inline-block;
 }
-.displayDiv07,.displayDiv08 {
-    display: inline-block;
-}
+
 /* inline-block 基线对齐问题, vertical-align 调整基线 */
-.displayDiv09,.displayDiv10 {
+.displayDiv05 {
     display: inline-block;
     vertical-align: top;
 }
