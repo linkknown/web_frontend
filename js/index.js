@@ -79,35 +79,52 @@ window.onload = function () {
 
 
 
-    var saveJsonObjectNode = document.getElementById("saveJsonObject");
-    var showJsonObjectNode = document.getElementById("showJsonObject");
-    var showJsonStringNode = document.getElementById("showJsonString");
+    var testSessionStorageNodes = document.querySelectorAll(".testSessionStorage");
+    testSessionStorageNodes[0].onclick = function (event) {
+        let userName = document.getElementsByName("userName1")[0].value;
+        let password = document.getElementsByName("password1")[0].value;
+        let jsonObject = {userName, password};
+        let jsonStr = JSON.stringify(jsonObject);
+        sessionStorage.setItem("jsonStr", jsonStr);
 
-    saveJsonObjectNode.addEventListener('click', function (event) {
-        var userName = document.getElementsByName("userName1")[0].value;
-        var password = document.getElementsByName("password1")[0].value;
-
-        var jsonObject = {'userName': userName, 'password': password};
-
-        // localStorage.setItem('jsonObject', JSON.stringify(jsonObject));
-        sessionStorage.setItem('jsonObject', JSON.stringify(jsonObject));
         // event.preventDefault() 方法阻止元素发生默认的行为,此处为当点击提交按钮时阻止对表单的提交
         event.preventDefault();
-    });
-
-    showJsonObjectNode.addEventListener("click", function (event) {
-        // var jsonStr = localStorage.getItem('jsonObject');
-        var jsonStr = sessionStorage.getItem('jsonObject');
-        var jsonObject = JSON.parse(jsonStr);
-        alert(jsonObject);
-        event.preventDefault();
-    });
-    showJsonStringNode.addEventListener("click", function (event) {
-        // var jsonStr = localStorage.getItem('jsonObject');
-        var jsonStr = sessionStorage.getItem('jsonObject');
+    }
+    testSessionStorageNodes[1].onclick = function (event) {
+        let jsonStr = sessionStorage.getItem("jsonStr");
         alert(jsonStr);
+
         event.preventDefault();
-    });
+    }
+    testSessionStorageNodes[2].onclick = function (event) {
+        let jsonStr = sessionStorage.getItem("jsonStr");
+        alert(JSON.parse(jsonStr));
+
+        event.preventDefault();
+    }
+
+    var testLocalStorageNodes = document.querySelectorAll(".testLocalStorage");
+    testLocalStorageNodes[0].onclick = function (event) {
+        let userName = document.getElementsByName("userName1")[0].value;
+        let password = document.getElementsByName("password1")[0].value;
+        let jsonObject = {userName, password};
+        let jsonStr = JSON.stringify(jsonObject);
+        localStorage.setItem("jsonStr", jsonStr);
+
+        event.preventDefault();
+    }
+    testLocalStorageNodes[1].onclick = function (event) {
+        let jsonStr = localStorage.getItem("jsonStr");
+        alert(jsonStr);
+
+        event.preventDefault();
+    }
+    testLocalStorageNodes[2].onclick = function (event) {
+        let jsonStr = localStorage.getItem("jsonStr");
+        alert(JSON.parse(jsonStr));
+
+        event.preventDefault();
+    }
 
     // 练习事件冒泡
     var box01Node = document.getElementById("box01");
@@ -136,8 +153,8 @@ window.onload = function () {
     // 练习事件类型
     // scroll 事件测试
     var showDocumentScrollNode = document.getElementById("showDocumentScroll");
-    document.addEventListener("scroll", function () {
-        showDocumentScrollNode.innerText = "页面正在滚动中" + formatDate("yyyy-MM-dd hh:mm:ss", new Date());
+    document.addEventListener("scroll", function (event) {
+        showDocumentScrollNode.innerText = "页面正在滚动中: " + window.pageYOffset;
     });
 }
 
@@ -336,6 +353,14 @@ function clickBox (info) {
     alert("点击了" + info);
 }
 
+function testOnFocus () {
+    let testOnFocusAndBlurNode = document.getElementsByName("testOnFocusAndBlur")[0];
+    testOnFocusAndBlurNode.value = "获取光标了...";
+}
+function testOnBlur () {
+    let testOnFocusAndBlurNode = document.getElementsByName("testOnFocusAndBlur")[0];
+    testOnFocusAndBlurNode.value = "失去光标了...";
+}
 
 
 // mouse 事件

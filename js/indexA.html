@@ -84,9 +84,14 @@
     <form>
         <label>用户名：</label><input type="text" name="userName1"/>
         <label>密码：</label><input type="password" name="password1"/>
-        <button id="saveJsonObject">会话存储</button>
-        <button id="showJsonObject">显示 json 对象</button>
-        <button id="showJsonString">显示 json 字符串</button>
+        <br/><br/>
+        <button class="testSessionStorage">会话存储：sessionStorage</button>
+        <button class="testSessionStorage">显示数据：sessionStorage</button>
+        <button class="testSessionStorage">显示数据：sessionStorage</button>
+
+        <button class="testLocalStorage">会话存储：localStorage</button>
+        <button class="testLocalStorage">显示数据：localStorage</button>
+        <button class="testLocalStorage">显示数据：localStorage</button>
     </form>
 
 
@@ -110,15 +115,11 @@
     <br/><br/>
     <!-- 练习事件类型 -->
     <!-- scroll 滚动事件 -->
-    <a id="showDocumentScroll">document 滚动位置：</a>
+    <span id="showDocumentScroll">显示滚动位置：</span>
 
     <br/><br/>
     <!-- focus 事件 -->
-    <!-- alert 当你点击弹出框的 " 确定 " 时,你的文本框就失去焦点了,而你点击了之后文本框又获得焦点了,这个时候就陷入死循环了, 用 console.log 测试 -->
-    <!-- <input type="text" name="testonfocus" onfocus="alert('onfocus');"/>-->
-    <input type="text" name="testonfocus" onfocus="console.log('onfocus');"/>
-    <!-- blur 事件 -->
-    <input type="text" name="testonblur" onblur="alert('onblur');"/>
+    <input type="text" name="testOnFocusAndBlur" onfocus="testOnFocus()" onblur="testOnBlur()"/>
 
     <br/><br/>
     <!-- onclick、ondblclick 事件 -->
