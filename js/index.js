@@ -7,18 +7,137 @@ window.onload = function () {
     clickMeNode.onclick = onClickMe;
 
     // 练习 json
-    bindEventForJson();
+    var testCreateJsonNode = document.getElementById("testCreateJson");
 
-    bindEventForTimeoutAndInterval();
+    // testCreateJsonNode.onclick = function () {}
+    // testCreateJsonNode.ondblclick = function () {}
+    // testCreateJsonNode.onmouseenter = function () {}
+    // testCreateJsonNode.addEventListener('click', function () {});
+    // testCreateJsonNode.addEventListener('dblclick', function () {});
+    // testCreateJsonNode.addEventListener('mouseenter', function () {});
+
+    testCreateJsonNode.addEventListener('click', function () {
+        // var、let、const 都可以定义声明变量活常量
+        // const 声明常量
+        // var、let 声明变量
+
+        // 在 js 里面，单引号和双引号都能用来表示一个字符串
+        var userName = "admin";
+        var password = '123456';
+
+        // let 比 var 更安全，仅用于块作用域
+
+        // 使用 {} 创建一个对象
+        let jsonObject = {"userName":userName, "password":password};
+        alert(jsonObject);
+        alert(typeof jsonObject);
+
+        // 以字符串的形式表示 json
+        let jsonString = JSON.stringify(jsonObject);
+        alert(jsonString);
+        alert(typeof jsonString);
+
+        // 将字符串再转换成 json
+        jsonObject = JSON.parse(jsonString);
+        alert(jsonObject);
+        alert(typeof jsonObject);
+
+        // 简写, 和 {"userName":userName, "password":password}; 一样
+        jsonObject = {userName, password};
+        alert(jsonObject);
+        alert(typeof jsonObject);
+        alert(JSON.stringify(jsonObject));
+    });
+
+    // 测试倒计时和定时任务功能
+    var testSetTimeoutNode = document.querySelector(".testSetTimeout");
+    var testSetIntervalNode = document.querySelector(".testSetInterval");
+    var testClearTimeoutNode = document.querySelector(".testClearTimeout");
+    var testClearIntervalNode = document.querySelector(".testClearInterval");
+    var showTimeNode = document.querySelector(".showTime");
+
+    var timeoutHandler;
+    var intervalHandler;
+
+    testSetTimeoutNode.onclick = function () {
+        // window.setTimeout() === setTimeout()
+        timeoutHandler = setTimeout(function () {
+            showTimeNode.innerHTML = "setTimeout =>" + formatDate("yyyy-MM-dd hh:mm:ss", new Date());
+        }, 1000);
+    }
+    testSetIntervalNode.onclick = function () {
+        intervalHandler = setInterval(function () {
+            showTimeNode.innerHTML = "setInterval => " + formatDate("yyyy-MM-dd hh:mm:ss", new Date());
+        }, 1000);
+    }
+    testClearTimeoutNode.onclick = function () {
+        clearTimeout(timeoutHandler);
+    }
+    testClearIntervalNode.onclick = function () {
+        clearInterval(intervalHandler);
+    }
+
+
+
+    var saveJsonObjectNode = document.getElementById("saveJsonObject");
+    var showJsonObjectNode = document.getElementById("showJsonObject");
+    var showJsonStringNode = document.getElementById("showJsonString");
+
+    saveJsonObjectNode.addEventListener('click', function (event) {
+        var userName = document.getElementsByName("userName1")[0].value;
+        var password = document.getElementsByName("password1")[0].value;
+
+        var jsonObject = {'userName': userName, 'password': password};
+
+        // localStorage.setItem('jsonObject', JSON.stringify(jsonObject));
+        sessionStorage.setItem('jsonObject', JSON.stringify(jsonObject));
+        // event.preventDefault() 方法阻止元素发生默认的行为,此处为当点击提交按钮时阻止对表单的提交
+        event.preventDefault();
+    });
+
+    showJsonObjectNode.addEventListener("click", function (event) {
+        // var jsonStr = localStorage.getItem('jsonObject');
+        var jsonStr = sessionStorage.getItem('jsonObject');
+        var jsonObject = JSON.parse(jsonStr);
+        alert(jsonObject);
+        event.preventDefault();
+    });
+    showJsonStringNode.addEventListener("click", function (event) {
+        // var jsonStr = localStorage.getItem('jsonObject');
+        var jsonStr = sessionStorage.getItem('jsonObject');
+        alert(jsonStr);
+        event.preventDefault();
+    });
 
     // 练习事件冒泡
-    bindEventForStopPropagation();
+    var box01Node = document.getElementById("box01");
+    var box02Node = document.getElementById("box02");
+    var box03Node = document.getElementById("box03");
+    // 方式二
+    box01Node.onclick = function () {
+        clickBox("box01");
+    };
+    // 方式三
+    box02Node.onclick = () => clickBox("box02");
+    // 方式四
+    box03Node.addEventListener("click", function () {
+        clickBox("box03");
+    });
+
+    // 禁止事件冒泡方式
+    var box04Node = document.getElementById("box04");
+    var box05Node = document.getElementById("box05");
+    var box06Node = document.getElementById("box06");
+
+    box04Node.onclick = (event) => clickBoxWithStop(event, "box04");
+    box05Node.onclick = (event) => clickBoxWithStop(event, "box05");
+    box06Node.onclick = (event) => clickBoxWithStop(event, "box06");
 
     // 练习事件类型
     // scroll 事件测试
     var showDocumentScrollNode = document.getElementById("showDocumentScroll");
     document.addEventListener("scroll", function () {
-        showDocumentScrollNode.innerText = "页面正在滚动中" + new Date().getTime();
+        showDocumentScrollNode.innerText = "页面正在滚动中" + formatDate("yyyy-MM-dd hh:mm:ss", new Date());
     });
 }
 
@@ -131,6 +250,81 @@ function testSetAttribute01 () {
     }
 }
 
+function testAppendChild01 () {
+    var ulNode = document.getElementById("ulNode");
+    var liNode = document.createElement("li");
+    // innerText
+    liNode.innerText = "我是元素第" + (ulNode.getElementsByTagName("li").length + 1) + "项";
+    ulNode.appendChild(liNode);
+}
+
+function testAppendChild02 () {
+    var ulNode = document.getElementById("ulNode");
+    var liNode = document.createElement("li");
+    // createTextNode
+    var textNode = document.createTextNode("我是元素第" + (ulNode.getElementsByTagName("li").length + 1) + "项");
+    liNode.appendChild(textNode);
+    ulNode.appendChild(liNode);
+}
+
+function testReplaceChild01 () {
+    var ulNode = document.getElementById("ulNode");
+    var liNodes = ulNode.getElementsByTagName("li");
+
+    var newLiNode = document.createElement("li");
+    newLiNode.innerText = "我是列表元素最后一项";
+
+    ulNode.replaceChild(newLiNode, liNodes[liNodes.length - 1]);
+}
+
+function testInsertBefore01 (){
+    var ulNode = document.getElementById("ulNode");
+    var liNodes = ulNode.getElementsByTagName("li");
+
+    var lastNode = liNodes[liNodes.length - 1];
+
+    var newLiNode = document.createElement("li");
+    newLiNode.innerText = "我是插入的节点" + new Date().getTime();
+
+    ulNode.insertBefore(newLiNode, lastNode);
+}
+
+// DOM 没有提供 insertAfter() 方法
+function testInsertAfter01 (){
+    var ulNode = document.getElementById("ulNode");
+    var liNodes = ulNode.getElementsByTagName("li");
+
+    // var targetIndex = 0;
+    var targetIndex = liNodes.length - 1;
+
+    var newLiNode = document.createElement("li");
+    newLiNode.innerText = "我是插入的节点" + new Date().getTime();
+
+    // 可由以下逻辑实现
+    // if (targetIndex === liNodes.length - 1) {
+    //     ulNode.appendChild(liNode);
+    // } else {
+    //     ulNode.insertBefore(liNode, liNodes[targetIndex + 1]);
+    // }
+    insertAfter(targetIndex, ulNode, liNodes, newLiNode);
+}
+
+
+function insertAfter (targetIndex, ulNode, liNodes, newLiNode) {
+    if (targetIndex === liNodes.length - 1) {
+        ulNode.appendChild(newLiNode);
+    } else {
+        ulNode.insertBefore(newLiNode, liNodes[targetIndex + 1]);
+    }
+}
+
+function testRemoveChild01 () {
+    var ulNode = document.getElementById("ulNode");
+    var liNodes = ulNode.getElementsByTagName("li");
+
+    ulNode.removeChild(liNodes[liNodes.length - 1]);
+}
+
 
 function clickBoxWithStop (event, info) {
     alert("点击了" + info);
@@ -158,174 +352,6 @@ function showUpperText (event) {
     }
 }
 
-function bindEventForJson() {
-    // 练习 json
-    var testJsonNode = document.getElementById("testJson");
-    var saveJsonObjectNode = document.getElementById("saveJsonObject");
-    var showJsonObjectNode = document.getElementById("showJsonObject");
-    var showJsonStringNode = document.getElementById("showJsonString");
-
-    testJsonNode.addEventListener('click', function () {
-        // var、let、const 都可以定义声明变量活常量
-        // const 声明常量
-        // var、let 声明变量
-        const userName = "admin";
-        const password = "123456";
-        // let 比 var 更安全，仅用于块作用域
-        let jsonObject = {"userName":userName, "password":password};
-        let jsonString = JSON.stringify(jsonObject);
-        alert(jsonObject);
-        alert(jsonString);
-        // 简写, 和 {"userName":userName, "password":password}; 一样
-        jsonObject = {userName, password};
-        alert(jsonObject);
-        alert(JSON.stringify(jsonObject));
-        alert(JSON.parse(jsonString));
-    });
-
-    saveJsonObjectNode.addEventListener('click', function (event) {
-        var userName = document.getElementsByName("userName1")[0].value;
-        var password = document.getElementsByName("password1")[0].value;
-
-        var jsonObject = {'userName': userName, 'password': password};
-
-        // localStorage.setItem('jsonObject', JSON.stringify(jsonObject));
-        sessionStorage.setItem('jsonObject', JSON.stringify(jsonObject));
-        // event.preventDefault() 方法阻止元素发生默认的行为,此处为当点击提交按钮时阻止对表单的提交
-        event.preventDefault();
-    });
-
-    showJsonObjectNode.addEventListener("click", function (event) {
-        // var jsonStr = localStorage.getItem('jsonObject');
-        var jsonStr = sessionStorage.getItem('jsonObject');
-        var jsonObject = JSON.parse(jsonStr);
-        alert(jsonObject);
-        event.preventDefault();
-    });
-    showJsonStringNode.addEventListener("click", function (event) {
-        // var jsonStr = localStorage.getItem('jsonObject');
-        var jsonStr = sessionStorage.getItem('jsonObject');
-        alert(jsonStr);
-        event.preventDefault();
-    });
-}
-
-function bindEventForStopPropagation() {
-    var box01Node = document.getElementById("box01");
-    var box02Node = document.getElementById("box02");
-    var box03Node = document.getElementById("box03");
-    // 方式二
-    box01Node.onclick = function () {
-        clickBox("box01");
-    };
-    // 方式三
-    box02Node.onclick = () => clickBox("box02");
-    // 方式四
-    box03Node.addEventListener("click", function () {
-        clickBox("box03");
-    });
-
-    // 禁止事件冒泡方式
-    var box04Node = document.getElementById("box04");
-    var box05Node = document.getElementById("box05");
-    var box06Node = document.getElementById("box06");
-
-    box04Node.onclick = (event) => clickBoxWithStop(event, "box04");
-    box05Node.onclick = (event) => clickBoxWithStop(event, "box05");
-    box06Node.onclick = (event) => clickBoxWithStop(event, "box06");
-}
-
-function bindEventForTimeoutAndInterval() {
-    var timeoutTestNode = document.getElementsByClassName("timeoutTest")[0];
-    var clearTimeoutTestNode = document.getElementsByClassName("clearTimeoutTest")[0];
-    var intervalTestNode = document.getElementsByClassName("intervalTest")[0];
-    var clearIntervalTestNode = document.getElementsByClassName("clearIntervalTest")[0];
-
-    var timeoutHandler;
-    var intervalHandler;
-
-    timeoutTestNode.onclick = function () {
-        // window.setTimeout() === setTimeout()
-        timeoutHandler = setTimeout(function () {
-            console.log("setTimeout");
-        }, 1000);
-    }
-    intervalTestNode.onclick = function () {
-        intervalHandler = setInterval(function () {
-            console.log("setInterval");
-        }, 1000);
-    }
-    clearTimeoutTestNode.onclick = function () {
-       clearTimeout(timeoutHandler);
-    }
-    clearIntervalTestNode.onclick = function () {
-       clearInterval(intervalHandler);
-    }
-}
-
-
-function testAppendChild01 () {
-    var ulNode = document.getElementById("ulNode");
-    var liNode = document.createElement("li");
-    // innerText
-    liNode.innerText = "我是元素第" + (ulNode.getElementsByTagName("li").length + 1) + "项";
-    ulNode.appendChild(liNode);
-}
-
-function testAppendChild02 () {
-    var ulNode = document.getElementById("ulNode");
-    var liNode = document.createElement("li");
-    // createTextNode
-    var textNode = document.createTextNode("我是元素第" + (ulNode.getElementsByTagName("li").length + 1) + "项");
-    liNode.appendChild(textNode);
-    ulNode.appendChild(liNode);
-}
-
-function testReplaceChild01 () {
-    var ulNode = document.getElementById("ulNode");
-    var liNodes = ulNode.getElementsByTagName("li");
-
-    var liNode = document.createElement("li");
-    liNode.innerText = "我是元素最后一项";
-
-    ulNode.replaceChild(liNode, liNodes[liNodes.length-1]);
-}
-
-function testInsertBefore01 (){
-    var ulNode = document.getElementById("ulNode");
-    var liNodes = ulNode.getElementsByTagName("li");
-
-    var liNode = document.createElement("li");
-    liNode.innerText = "我是插入的节点" + new Date().getTime();
-
-    ulNode.insertBefore(liNode, liNodes[liNodes.length-1]);
-}
-
-// DOM 没有提供 insertAfter() 方法
-function testInsertAfter01 (){
-    var ulNode = document.getElementById("ulNode");
-    var liNodes = ulNode.getElementsByTagName("li");
-
-    // var targetIndex = 0;
-    var targetIndex = liNodes.length - 1;
-
-    var liNode = document.createElement("li");
-    liNode.innerText = "我是插入的节点" + new Date().getTime();
-
-    // 可由以下逻辑实现
-    if (targetIndex === liNodes.length - 1) {
-        ulNode.appendChild(liNode);
-    } else {
-        ulNode.insertBefore(liNode, liNodes[targetIndex + 1]);
-    }
-}
-
-function testRemoveChild01 () {
-    var ulNode = document.getElementById("ulNode");
-    var liNodes = ulNode.getElementsByTagName("li");
-
-    ulNode.removeChild(liNodes[liNodes.length - 1]);
-}
 
 // dom api 综合练习
 function submitUserSalaryForm () {
