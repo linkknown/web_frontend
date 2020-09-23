@@ -9,15 +9,15 @@
 <body>
 
     <!-- 练习 window.onload 方法中添加 onclick 事件 -->
-    <a id="clickMe">练习点击事件</a>
+    <button id="clickMe">练习点击事件</button>
 
     <br/><br/>
     <!-- 练习 window.location.href 进行跳转 -->
-    <a onclick="goPage('B')">我是 A 页面,点击跳往 B 页面</a>
+    <button onclick="goPage('B')">我是 A 页面,点击跳往 B 页面</button>
 
     <br/><br/>
     <!-- 获取屏幕尺寸信息 -->
-    <a onclick="showScreenInfo()">点击获取屏幕尺寸信息</a>
+    <button onclick="showScreenInfo()">点击获取屏幕尺寸信息</button>
     <p class="screenInfoBox"></p>
 
     <br/><br/>
@@ -38,9 +38,11 @@
         <br/><br/>
     </div>
 
+    <!-- 获取元素节点 -->
     <button onclick="testGetElementByld01()">测试 getElementByld</button>
     <button onclick="testGetElementByTagName01()">测试 getElementByTagName</button>
     <button onclick="testGetElementByClassName01()">测试 getElementByClassName</button>
+    <!-- 练习节点的几个常用方法 -->
     <button onclick="testHasChildNodes01()">测试 hasChildNodes</button>
     <button onclick="testGetAttribute01()">测试 getAttribute</button>
     <button onclick="testSetAttribute01()">测试 setAttribute</button>

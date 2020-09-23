@@ -1,3 +1,137 @@
+window.onload = function () {
+    // 练习查找节点
+    // document 对象是 window.document 的简写，可以不用创建和赋值就直接使用
+    // document.getElementById 这个方法可以根据 id 值获取页面元素
+    var clickMeNode = document.getElementById("clickMe");
+    // 给页面元素添加点击事件
+    clickMeNode.onclick = onClickMe;
+
+    // 练习 json
+    bindEventForJson();
+
+    bindEventForTimeoutAndInterval();
+
+    // 练习事件冒泡
+    bindEventForStopPropagation();
+
+    // 练习事件类型
+    // scroll 事件测试
+    var showDocumentScrollNode = document.getElementById("showDocumentScroll");
+    document.addEventListener("scroll", function () {
+        showDocumentScrollNode.innerText = "页面正在滚动中" + new Date().getTime();
+    });
+}
+
+function onClickMe () {
+    alert("helloworld...");
+}
+
+
+function goPage (pageName) {
+    if (pageName === "A"){
+        window.location.href = "./indexA.html"
+    } else if (pageName === 'B') {
+        window.location.href = "./indexB.html"
+    } else if (pageName === 'back'){
+        window.history.back();
+    } else if (pageName === '-go'){
+        // 前进后退多页 delta > 1
+        // history.go(-1);   //页面后退一页
+        // history.go(1);    //页面前进一页
+        window.history.go(-1);
+    }
+}
+
+// 了解部分属性即可
+function showScreenInfo () {
+    var node = document.getElementsByClassName("screenInfoBox")[0];
+    node.innerHTML = "当前时间：" + new Date().getTime()
+        +"<br />"+
+        "屏幕分辨率为："+screen.width+"*"+screen.height
+        +"<br />"+
+        "屏幕可用大小："+screen.availWidth+"*"+screen.availHeight
+        +"<br />"+
+        "网页可见区域宽："+document.body.clientWidth
+        +"<br />"+
+        "网页可见区域高："+document.body.clientHeight
+        +"<br />"+
+        "网页可见区域宽(包括边线的宽)："+document.body.offsetWidth
+        +"<br />"+
+        "网页可见区域高(包括边线的宽)："+document.body.offsetHeight
+        +"<br />"+
+        "网页正文全文宽："+document.body.scrollWidth
+        +"<br />"+
+        "网页正文全文高："+document.body.scrollHeight
+        +"<br />"+
+        "网页被卷去的高："+document.body.scrollTop
+        +"<br />"+
+        "网页被卷去的左："+document.body.scrollLeft
+        +"<br />"+
+        "网页正文部分上："+window.screenTop
+        +"<br />"+
+        "网页正文部分左："+window.screenLeft
+        +"<br />"+
+        "屏幕分辨率的高："+window.screen.height
+        +"<br />"+
+        "屏幕分辨率的宽："+window.screen.width
+        +"<br />"+
+        "屏幕可用工作区高度："+window.screen.availHeight
+        +"<br />"+
+        "屏幕可用工作区宽度："+window.screen.availWidth;
+}
+
+// 测试
+// document.getElementByld()                返回一个节点
+// document.getElementsByTagName()          返回 N 个节点
+// document.getElementByClassName()         返回 N 个节点
+function testGetElementByld01 () {
+    // js 中 var 是用于申明变量的
+    var loginBoxNode = document.getElementById("loginBox");
+    alert(loginBoxNode.innerHTML);
+}
+
+function testGetElementByTagName01 () {
+    // 返回的是多个
+    var inputNodes = document.getElementsByTagName("input");
+    for (var i=0; i< inputNodes.length; i++){
+        var inputNode = inputNodes[i];
+        alert(inputNode.outerHTML);
+    }
+}
+
+function testGetElementByClassName01 () {
+    var labelNode = document.getElementsByClassName("label01")[0];
+    alert(labelNode.outerHTML);
+}
+
+function testHasChildNodes01 () {
+    var loginBoxNode = document.getElementById("loginBox");
+    alert("是否有子节点" + loginBoxNode.hasChildNodes());
+    alert(loginBoxNode.childNodes.length);
+    var _childNodes = loginBoxNode.childNodes;
+    for (var i=0; i<_childNodes.length; i++){
+        var _childNode = _childNodes[i];
+        console.log(_childNode.nodeName + " ~ " + _childNode.nodeType);
+    }
+}
+
+function testGetAttribute01() {
+    var loginBoxNode = document.getElementById("loginBox");
+    var styleNode = loginBoxNode.getAttribute("style");
+    alert(styleNode);
+}
+
+function testSetAttribute01 () {
+    var loginBoxNode = document.getElementById("loginBox");
+
+    if (!loginBoxNode.hidden) {
+        loginBoxNode.setAttribute('hidden', true);
+    } else {
+        loginBoxNode.removeAttribute('hidden');
+    }
+}
+
+
 function clickBoxWithStop (event, info) {
     alert("点击了" + info);
     // 停止事件冒泡
@@ -8,9 +142,7 @@ function clickBox (info) {
     alert("点击了" + info);
 }
 
-function onClickMe () {
-    alert("helloworld...");
-}
+
 
 // mouse 事件
 function testMouseEvent (info) {
@@ -79,10 +211,6 @@ function bindEventForJson() {
 }
 
 function bindEventForStopPropagation() {
-    var clickMeNode = document.getElementById("clickMe");
-    // 方式一
-    clickMeNode.onclick = onClickMe;
-
     var box01Node = document.getElementById("box01");
     var box02Node = document.getElementById("box02");
     var box03Node = document.getElementById("box03");
@@ -135,129 +263,6 @@ function bindEventForTimeoutAndInterval() {
     }
 }
 
-window.onload = function () {
-    // 练习 json
-    bindEventForJson();
-
-    bindEventForTimeoutAndInterval();
-
-    // 练习事件冒泡
-    bindEventForStopPropagation();
-
-    // 练习事件类型
-    // scroll 事件测试
-    var showDocumentScrollNode = document.getElementById("showDocumentScroll");
-    document.addEventListener("scroll", function () {
-        showDocumentScrollNode.innerText = "页面正在滚动中" + new Date().getTime();
-    });
-}
-
-function goPage (pageName) {
-    if (pageName === "A"){
-        window.location.href = "./indexA.html"
-    } else if (pageName === 'B') {
-        window.location.href = "./indexB.html"
-    } else if (pageName === 'back'){
-        window.history.back();
-    } else if (pageName === '-go'){
-        // 前进后退多页 delta > 1
-        // history.go(-1);   //页面后退一页
-        // history.go(1);    //页面前进一页
-        window.history.go(-1);
-    }
-}
-
-// 了解部分属性即可
-function showScreenInfo () {
-    var node = document.getElementsByClassName("screenInfoBox")[0];
-    node.innerHTML = "当前时间：" + new Date().getTime()
-        +"<br />"+
-        "屏幕分辨率为："+screen.width+"*"+screen.height
-        +"<br />"+
-        "屏幕可用大小："+screen.availWidth+"*"+screen.availHeight
-        +"<br />"+
-        "网页可见区域宽："+document.body.clientWidth
-        +"<br />"+
-        "网页可见区域高："+document.body.clientHeight
-        +"<br />"+
-        "网页可见区域宽(包括边线的宽)："+document.body.offsetWidth
-        +"<br />"+
-        "网页可见区域高(包括边线的宽)："+document.body.offsetHeight
-        +"<br />"+
-        "网页正文全文宽："+document.body.scrollWidth
-        +"<br />"+
-        "网页正文全文高："+document.body.scrollHeight
-        +"<br />"+
-        "网页被卷去的高："+document.body.scrollTop
-        +"<br />"+
-        "网页被卷去的左："+document.body.scrollLeft
-        +"<br />"+
-        "网页正文部分上："+window.screenTop
-        +"<br />"+
-        "网页正文部分左："+window.screenLeft
-        +"<br />"+
-        "屏幕分辨率的高："+window.screen.height
-        +"<br />"+
-        "屏幕分辨率的宽："+window.screen.width
-        +"<br />"+
-        "屏幕可用工作区高度："+window.screen.availHeight
-        +"<br />"+
-        "屏幕可用工作区宽度："+window.screen.availWidth;
-}
-
-// 测试
-// document.getElementByld()                返回一个节点
-// document.getElementsByTagName()          返回 N 个节点
-// document.getElementByClassName()         返回 N 个节点
-function testGetElementByld01 () {
-    alert(document);
-    // js 中 var 是用于申明变量的
-    var node = document.getElementById("loginBox");
-    alert(node);
-    alert(node.innerHTML);
-}
-
-function testGetElementByTagName01 () {
-    // 返回的是多个
-    var inputNodes = document.getElementsByTagName("input");
-    alert("发现了" + inputNodes.length + "个节点");
-    for (var i=0; i< inputNodes.length; i++){
-        var inputNode = inputNodes[i];
-        alert(inputNode);
-    }
-}
-
-function testGetElementByClassName01 () {
-    var labelNodes = document.getElementsByClassName("label01");
-    alert("发现了" + labelNodes.length + "个节点");
-    for (var i=0; i< labelNodes.length; i++){
-        var labelNode = labelNodes[i];
-        alert(labelNode);
-    }
-}
-
-function testHasChildNodes01 () {
-    var loginBoxNode = document.getElementById("loginBox");
-    alert("是否有子节点" + loginBoxNode.hasChildNodes());
-    alert(loginBoxNode.childNodes.length);
-    let _childNodes = loginBoxNode.childNodes;
-    for (var i=0; i<_childNodes.length; i++){
-        var _childNode = _childNodes[i];
-        console.log(_childNode.nodeName + " ~ " + _childNode.nodeType);
-    }
-}
-
-function testGetAttribute01() {
-    var loginBoxNode = document.getElementById("loginBox");
-    var styleNode = loginBoxNode.getAttribute("style");
-    alert(styleNode);
-}
-
-function testSetAttribute01 () {
-    var loginBoxNode = document.getElementById("loginBox");
-    loginBoxNode.setAttribute("class",
-        loginBoxNode.getAttribute("class") === "hidden" ? "show": "hidden");
-}
 
 function testAppendChild01 () {
     var ulNode = document.getElementById("ulNode");
