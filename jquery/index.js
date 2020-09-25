@@ -89,18 +89,26 @@ $(document).ready(function () {
     $("dl:eq(5) dd[class^='content']").css('font-size', '30px');
     $("dl:eq(5) dd[class$='01']").css('color', 'pink');
 
-    // 测试查找 find、parent
-    $(".queryDiv").find(".findTest").click(function () {
-        alert($(".queryDiv").find(".div01").find(".div03").html());
+    // 测试查找 find、parent、children
+    $(".queryDiv button:eq(0)").click(function () {
+        alert($(".queryDiv > .div01").children(".div02").html());
     });
-    $(".queryDiv").find(".parentTest").click(function () {
-        alert($(".queryDiv").find(".div01").find(".div03").parent().parent().html());
+
+    $(".queryDiv button:eq(1)").click(function () {
+        alert($(".queryDiv .div03").parent().parent().html());
+    });
+
+    // find 可以查找子孙节点，children 只可以查找子节点
+    $(".queryDiv button:eq(2)").click(function () {
+        alert($(".queryDiv").find(".div03").html());
     });
 
     // 表单选择器
     $(":input").css('width', '500px');
     $(":text").css('height', '50px');
 
+
+    $("input[type='checkbox']").css('width','20px');
      // 建议直接使用 elem.checked
      // elem.checked	                    true (Boolean) Will change with checkbox state
      // $(elem).prop("checked")	            true (Boolean) Will change with checkbox state
@@ -168,15 +176,15 @@ $(document).ready(function () {
     });
 
     // 测试 addClass、removeClass、toggleClass
-    $(".showClassDiv:eq(1)").click(function () {
-        $(".showClassDiv:eq(0)").addClass("bgRed");
+    $(".testClassDiv:eq(1)").click(function () {
+        $(".testClassDiv:eq(0)").addClass("bgRed");
     });
-    $(".showClassDiv:eq(2)").click(function () {
-        $(".showClassDiv:eq(0)").removeClass("bgRed");
+    $(".testClassDiv:eq(2)").click(function () {
+        $(".testClassDiv:eq(0)").removeClass("bgRed");
     });
-    $(".showClassDiv:eq(3)").click(function () {
+    $(".testClassDiv:eq(3)").click(function () {
         // 如果存在（不存在）就删除（添加）一个类。
-        $(".showClassDiv:eq(0)").toggleClass("bgRed");
+        $(".testClassDiv:eq(0)").toggleClass("bgRed");
     });
 
     // html、text 文本值设置和获取
@@ -195,16 +203,16 @@ $(document).ready(function () {
 
 
     // 测试 on、off、trigger 事件
-    $(".onEvent:eq(1)").click(function () {
-        $(".onEvent:eq(0)").on('click', function () {
+    $(".testEvent:eq(1)").click(function () {
+        $(".testEvent:eq(0)").on('click', function () {
             alert($(this).text());
         });
     });
-    $(".onEvent:eq(2)").click(function () {
-        $(".onEvent:eq(0)").off('click');
+    $(".testEvent:eq(2)").click(function () {
+        $(".testEvent:eq(0)").off('click');
     });
-    $(".onEvent:eq(3)").click(function () {
-        $(".onEvent:eq(0)").trigger('click');
+    $(".testEvent:eq(3)").click(function () {
+        $(".testEvent:eq(0)").trigger('click');
     });
 
 

@@ -45,16 +45,6 @@
         <dd>列表内容</dd>
         <dd>列表内容</dd>
         <dd>列表内容</dd>
-
-        <dt>列表标题</dt>
-        <dd>列表内容</dd>
-        <dd>列表内容</dd>
-        <dd>列表内容</dd>
-
-        <dt>列表标题</dt>
-        <dd>列表内容</dd>
-        <dd>列表内容</dd>
-        <dd>列表内容</dd>
     </dl>
 
     <dl>
@@ -93,6 +83,7 @@
         <dd class="content02">列表内容</dd>
         <dd class="content03">列表内容</dd>
         <dd class="content04">列表内容</dd>
+        <dd>列表内容</dd>
     </dl>
 
     <dl>
@@ -101,22 +92,20 @@
         <dd class="content02">列表内容</dd>
         <dd class="content03">列表内容</dd>
         <dd class="content04">列表内容</dd>
+        <dd>列表内容</dd>
     </dl>
 
     <br/><br/>
-    <!-- 测试查找 find、parent -->
+    <!-- 测试元素查找 find、parent、children -->
     <div class="queryDiv">
         <div class="div01">
-            <div class="div03">我是测试内容03</div>
-            <div class="div04">我是测试内容04</div>
-        </div>
-        <div class="div02">
-            <div class="div05">我是测试内容05</div>
-            <div class="div06">我是测试内容06</div>
+            <div class="div02">我是测试内容 02</div>
+            <div class="div03">我是测试内容 03</div>
         </div>
 
-        <button class="findTest">测试 find</button>
-        <button class="parentTest">测试 parent</button>
+        <button>测试 children()</button>
+        <button>测试 parent()</button>
+        <button>测试 find()</button>
     </div>
 
     <br/><br/>
@@ -174,28 +163,30 @@
     <br/>
 
     <!-- 测试 addClass、removeClass、toggleClass -->
-    <div class="showClassDiv" style="width: 300px;height: 100px;">div区域</div>
-    <div class="showClassDiv">测试 addClass</div>
-    <div class="showClassDiv">测试 removeClass</div>
-    <div class="showClassDiv">测试 toggleClass</div>
+    <div class="testClassDiv" style="width: 300px;height: 100px;">div区域</div>
+    <button class="testClassDiv">测试 addClass</button>
+    <button class="testClassDiv">测试 removeClass</button>
+    <button class="testClassDiv">测试 toggleClass</button>
 
     <br/>
     <!-- html、text 文本值设置和获取 -->
     <div class="htmlTextDiv">我是div内容</div>
     <div class="htmlTextDiv"><span>我是div内容<span>我是div内容</span></span><span>我是div内容</span></div>
 
-    <br/>
+    <br/><br/>
     <!-- 测试 on、off、trigger 事件 -->
-    <button class="onEvent">点击按钮啦~</button> &nbsp;&nbsp;&nbsp;
-    <button class="onEvent">测试 on</button>    &nbsp;&nbsp;&nbsp;
-    <button class="onEvent">测试 off</button>   &nbsp;&nbsp;&nbsp;
-    <button class="onEvent">测试 trigger</button>
+    <button class="testEvent">点击按钮啦~</button> &nbsp;&nbsp;&nbsp;
+    <button class="testEvent">测试 on</button>    &nbsp;&nbsp;&nbsp;
+    <button class="testEvent">测试 off</button>   &nbsp;&nbsp;&nbsp;
+    <button class="testEvent">测试 trigger</button>
 
+    <br/><br/>
     <!-- 测试事件效果,其它效果不演示 -->
     <div class="hoverDiv">测试 hover 效果</div>
+    <br/><br/>
     <input type="text" name="blurInput"/>
 
-    <br/>
+    <br/><br/>
     <!-- 其它效果自行练习 ...... 到此结束 -->
 
     <!-- 测试 ajax 请求 -->
