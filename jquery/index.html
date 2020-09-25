@@ -6,16 +6,21 @@
     <!-- jquery 需要在 index.js 之前引入 -->
 <!--    <script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>-->
 <!--    element.style 是内联样式或者是js改写代码之后所留下的 -->
-    <script src="./third/jquery-3.1.1.min.js"></script>
+    <script src="./jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./index.css"/>
     <script src="./index.js"></script>
 </head>
 <body style="padding: 50px;">
 
+    <div class="jsAndJquery">我是div 中的内容，请使用 js 和 jQuery 两种方式来获取我的文本值</div>
+    <button class="jsAndJquery_btn1">js 方式获取文本值</button>
+    <button class="jsAndJquery_btn2">jquery 方式获取文本值</button>
+
+    <br/><br/>
     <!-- 测试 jquery -->
     <!-- jquey 对象和 dom 对象互转-->
-    <div class="dom2jq">dom 对象转 jquery 对象</div>  <br/>
-    <div class="jq2dom">jquery 对象转 dom 对象</div>  <br/>
+    <button class="dom2jq">js dom 对象转 jQuery 对象</button>
+    <button class="jq2dom">jQuery 对象转 js dom 对象</button>
 
     <!-- 练习基本选择器 -->
     <div id="idDiv">我是ID选择器</div> <br/>
@@ -26,16 +31,11 @@
     <h3>我是分组选择器 h3</h3>
 
     <!-- 练习层级选择器 -->
-    <ul class="ul01">
+    <ul class="ulDiv">
         <li>我是列表中的<span>元素</span></li>
         <li>我是列表中的元素</li>
-    </ul>
-    <ul class="ul02">
-        <li>我是列表中的<span>元素</span></li>
         <li>我是列表中的元素</li>
-    </ul>
-    <ul class="ul03">
-        <li>我是列表中的<span>元素</span></li>
+        <li>我是列表中的元素</li>
         <li>我是列表中的元素</li>
     </ul>
 
@@ -43,6 +43,15 @@
     <dl>
         <dt>列表标题</dt>
         <dd>列表内容</dd>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+
+        <dt>列表标题</dt>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+        <dd>列表内容</dd>
+
+        <dt>列表标题</dt>
         <dd>列表内容</dd>
         <dd>列表内容</dd>
         <dd>列表内容</dd>

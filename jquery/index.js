@@ -1,27 +1,44 @@
 // window.onload 等价于 $(document).ready
 // window.onload = function () {}
 $(document).ready(function () {
-    bindEvent();
-});
+    // 测试 $(document).ready(function () {}) 的效果
+    // alert(document.getElementsByTagName("body")[0].innerHTML);
 
-function bindEvent () {
+    // js 对象
+    var jsAndJqueryBtn1 = document.getElementsByClassName("jsAndJquery_btn1")[0];
+    jsAndJqueryBtn1.onclick = function () {
+        alert(document.getElementsByClassName("jsAndJquery")[0].innerHTML);
+    }
+
+    // jQuery 对象
+    $(".jsAndJquery_btn2").click(function () {
+        alert($(".jsAndJquery").html());
+    });
+
+
+    // 部分使用 js, 部分使用 jQuery：js 对象和 jQuery 对象如何互转
+    // 互转规则
+    // $(dom) ==> jquery 对象
+    // $(dom)[0]    ==> dom 对象
 
     // jquery 对象和 dom 对象互转
     // dom => jquery
-    var dom2jqNode = document.getElementsByClassName("dom2jq")[0];
+    var dom2jqNode = document.getElementsByClassName("dom2jq");
     $(dom2jqNode).click(function () {
-        alert($(this).text());
+        alert($(".jsAndJquery").html());
     });
+
     // jquery => dom
     var jq2domNode = $(".jq2dom")[0];
     // var jq2domNode = $(".jq2dom").get(0);
     jq2domNode.onclick = function (){
-        alert(jq2domNode.innerText);
+        alert($(".jsAndJquery").html());
     }
 
 
     // 练习基本选择器
     $("#idDiv").click(function () {
+        alert(this);            // this 是当前选择器对应的 dom 对象
         alert($(this).html());
     });
     $(".classDiv").click(function () {
@@ -35,11 +52,11 @@ function bindEvent () {
     });
 
     // 练习层级选择器
-    // 祖先子元素层级选择器
-    $(".ul01 span").css('color', 'red');
-    $(".ul02 li").css('color', 'red');
+    // jQuery 对象很多方法是可以连缀的，每个方法会返回jQuery对象本身
     // 父子层级选择器
-    $(".ul03 > li").css('color', 'red');
+    $(".ulDiv > li").css('color', 'red');
+    // 祖先子孙元素层级选择器
+    $(".ulDiv span").css('color', 'green').css('font-weight', 'bold').css('font-style', 'italic');
 
     // 基本过滤选择器
     $("dl:first > dt").css('color', 'red');
@@ -198,5 +215,5 @@ function bindEvent () {
     $("input[name='blurInput']").blur(function () {
         console.log("blur.....");
     });
-}
 
+});
