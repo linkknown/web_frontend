@@ -35,9 +35,8 @@
 
 .modalDialog {
     width: 400px;
-    height: 500px;
-    /* 此处应该改成 fixed 更合适 */
-    position: absolute;
+    height: 300px;
+    position: fixed;
     background-color: white;
     top: 50%;
     left: 50%;
@@ -90,44 +89,30 @@
     height: 400px;
     background-size: cover;
 }
-.swiperAuto {
-    animation: swiperMarginLeft 10.5s infinite;
-}
 
-@keyframes swiperMarginLeft {
-    0% {
-        margin-left: 0;
-    }
-    18% {
-        margin-left: 0;
-    }
-    22% {
-        margin-left: -800px;
-    }
-    38% {
-        margin-left: -800px;
-    }
-    42% {
-        margin-left: -1600px;
-    }
-    58% {
-        margin-left: -1600px;
-    }
-    62% {
-        margin-left: -2400px;
-    }
-    78% {
-        margin-left: -2400px;
-    }
-    82% {
-        margin-left: -3200px;
-    }
-    96% {
-        margin-left: -3200px;
-    }
-    100% {
-        margin-left: 0;
-    }
+.swiperPage {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    list-style: none;
+}
+.swiperPage > li {
+    float: left;
+    color: white;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #e8e8e8;
+    background-color: transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+.swiperPage > li.active {
+    color: darkorange;
+    border: 1px solid darkorange;
 }
 
 .translateTextDiv li{
