@@ -332,9 +332,13 @@
     content: '';
     width: 0;
     height: 0;
-    border-width: 10px;        /* 三角形实际高度 20 */
-    border-style: solid;
-    border-color: transparent transparent transparent #ff6900;
+    /*border-width: 10px;        !* 三角形实际高度 20 *!*/
+    /*border-style: solid;*/
+    /*border-color: transparent transparent transparent #ff6900;*/
+
+    border: 10px solid transparent;
+    border-left-color: #ff6900;
+
     position: absolute;
     right: -20px;
     top: 20px;
@@ -365,12 +369,15 @@
     top: 0;
     transform: translateX(-50px) skewX(-15deg);
     filter: blur(20px);         /* CSS: filter: blur(); 实现高斯模糊效果,不可不知的细节优化 */
-    opacity: .6;
     animation: glint 1.2s infinite;
 }
 @keyframes glint{
-    0%{transform:translateX(-50px) skewX(-15deg);opacity:.6}
-    100%{transform:translateX(300px) skewX(-15deg);opacity:1}
+    0%{
+        transform:translateX(-50px) skewX(-15deg);
+    }
+    100%{
+        transform:translateX(300px) skewX(-15deg);
+    }
 }
 
 
