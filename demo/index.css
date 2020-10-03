@@ -35,7 +35,7 @@
 
 .modalDialog {
     width: 400px;
-    height: 300px;
+    height: 230px;
     position: fixed;
     background-color: white;
     top: 50%;
@@ -47,10 +47,17 @@
 .dialogHeader {
     height: 80px;
     line-height: 80px;
-    background-color: #7676ce;
+    background-color: blueviolet;
     color: white;
     text-align: center;
     font-size: 30px;
+}
+.dialogContent {
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 20px;
+    color: red;
 }
 .dialogClose {
     position: absolute;
@@ -76,7 +83,6 @@
 }
 .swiperList {
     list-style: none;
-    width: 9999px;
 }
 .swiperItem {
     width: 800px;
@@ -85,9 +91,8 @@
     line-height: 400px;
 }
 .swiperItem img {
-    width: 800px;
-    height: 400px;
-    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .swiperPage {

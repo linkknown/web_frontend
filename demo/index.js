@@ -1,8 +1,15 @@
 $(".modalDiv > button").click(function () {
-    $(".modalShade").removeClass('hide');
-    $(".modalDialog").removeClass('hide');
+    $(".modalShade").show();
+    $(".modalDialog").show();
     // 打开模态对话框后禁用滚动条
     $("body").css("overflow", "hidden");
+});
+
+
+$(".dialogClose").click(function () {
+    $(".modalShade").hide(1);
+    $(".modalDialog").hide(1);
+    $("body").css("overflow", "visible");
 });
 
 
@@ -45,11 +52,6 @@ $(".swiperList").hover(function () {
 }).trigger("mouseleave");   // 触发离开使其能自动播放
 
 
-$(".dialogClose").click(function () {
-    $(".modalShade").addClass('hide');
-    $(".modalDialog").addClass('hide')
-    $("body").css("overflow", "visible");
-});
 
 $(".translateTextDiv li").each(function (index, liNode) {
     $(liNode).hover(function () {
