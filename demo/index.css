@@ -4,7 +4,7 @@
 }
 
 .clearfix:after {
-    content:".";
+    content:"";
     display:block;
     height:0;
     visibility:hidden;
@@ -130,7 +130,7 @@
     color: orange;
     cursor: pointer;
 }
-.translateTextDivBottomBorder {
+.translateTextDiv .bottom {
     width: 50px;
     height: 2px;
     margin-top: 5px;
@@ -140,14 +140,15 @@
 
 
 /* 特效 border */
-.borderAnim01 {
+.borderAnim {
     display: inline-block;
     cursor: pointer;
+    margin: 0 10px 0 0;
 }
-.borderAnim01:hover {
+.borderAnim:hover {
     color: #ff6900;
 }
-.borderAnim01:after {
+.borderAnim:after {
     content: '';
     height: 2px;
     margin: 3px auto;
@@ -157,116 +158,84 @@
 
     transition: width 0.2s linear;
 }
-.borderAnim01:hover:after {
+.borderAnim:hover:after {
     width: 100%;
 }
 
 
 /* 三角形和箭头 */
+.sjx {
+    display: inline-block;
+}
 .sjx1 {
     width: 0;
     height: 0;
-    border-width: 20px;
+    border: 20px;
     border-style: solid;
-    border-color:#FFCCCC #0099CC #996699 #339933;
+    border-color: red green blue yellow;
 }
 .sjx2 {
     width: 0;
     height: 0;
-    border-width: 20px;
+    border: 20px;
     border-style: solid;
-    border-color:#FFCCCC transparent transparent transparent;   /* transparent 属性用来指定全透明色彩 */
+    border-color: red transparent transparent transparent;  /* transparent 属性用来指定全透明色彩 */
 }
 .sjx3 {
     width: 0;
     height: 0;
-    border-width: 20px;
+    border: 20px;
     border-style: solid;
-    border-color:transparent #0099CC transparent transparent;
+    border-color: transparent green transparent transparent;
 }
 .sjx4 {
     width: 0;
     height: 0;
-    border-width: 20px;
+    border: 20px;
     border-style: solid;
-    border-color:transparent transparent #996699 transparent;
+    border-color: transparent transparent blue transparent;
 }
 .sjx5 {
     width: 0;
     height: 0;
-    border-width: 20px;
-    border-style: solid;
-    border-color:transparent transparent transparent #339933;
+    /*border: 20px;*/
+    /*border-style: solid;*/
+    /*border-color: transparent transparent transparent yellow;*/
+    border: 20px solid transparent;
+    border-left-color: yellow;
 }
-.sjx5 {
-    width: 0;
-    height: 0;
-    border-width: 20px;
-    border-style: solid;
-    border-color:transparent transparent transparent #339933;
-    transform: rotate(45deg); /*顺时针旋转*/
+
+.jt{
+    display: inline-block;
+    vertical-align: top;        /* 调整 inline-block 基线对齐 */
+    margin-right: 20px;
 }
-.jt0{
-    position: absolute;
-}
-.jt0:before,.jt0:after{
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    border-top: 10px transparent dashed;
-    border-left: 10px transparent dashed;
-    border-bottom: 10px transparent dashed;
-    border-right: 10px #fff solid;      /* 上左下透明,右边白色 */
-}
-.jt0:before{
-    border-right: 10px #0099CC solid;   /* before 前右边颜色,覆盖之前的白色 */
-}
-.jt0:after{
-    left: 5px;                          /* 覆盖并错开 5 px */
-    border-right: 10px #fff solid;      /* after 后右边颜色,覆盖之前的白色,但还是白色 */
-}
-.jt1{
-    position: absolute;
-}
+/* 前后添加箭头 */
 .jt1:before,.jt1:after{
     position: absolute;
     content: '';
     width: 0;
     height: 0;
-    border-top: 10px transparent dashed;
-    border-left: 10px transparent dashed;
-    border-bottom: 10px transparent dashed;
-    border-right: 10px #fff solid;      /* 上左下透明,右边白色 */
-}
-.jt1:before{
-    border-right: 10px #0099CC solid;   /* before 前右边颜色,覆盖之前的白色 */
+    border: 20px solid transparent;
+    border-right-color: blue;            /* 右边蓝色 */
 }
 .jt1:after{
-    left: 1px;                          /* 覆盖并错开1px */
-    border-right: 10px #fff solid;      /* after 后右边颜色,覆盖之前的白色,但还是白色 */
+    margin-left: 10px;                          /* 覆盖并错开 10 px */
+    border-right-color: white;
 }
-.jt2{
-    position: absolute;
-}
+
 .jt2:before,.jt2:after{
     position: absolute;
     content: '';
     width: 0;
     height: 0;
-    border-top: 10px transparent dashed;
-    border-left: 10px transparent dashed;
-    border-right: 10px transparent dashed;
-    border-bottom: 10px #fff solid;
-}
-.jt2:before{
-    border-bottom: 10px #0099CC solid;
+    border: 20px solid transparent;
+    border-right-color: blue;            /* 右边蓝色 */
 }
 .jt2:after{
-    top: 1px; /*覆盖并错开1px*/
-    border-bottom: 10px #fff solid;
+    margin-left: 2px;                          /* 覆盖并错开 2 px */
+    border-right-color: white;
 }
-
 
 
 /* 右侧菜单栏 */

@@ -55,7 +55,7 @@ $(".swiperList").hover(function () {
 
 $(".translateTextDiv li").each(function (index, liNode) {
     $(liNode).hover(function () {
-        $(".translateTextDivBottomBorder").css('transform', 'translateX(' + 50 * index + 'px)');
+        $(".translateTextDiv .bottom").css('transform', 'translateX(' + 50 * index + 'px)');
     });
 });
 
