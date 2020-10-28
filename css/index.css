@@ -139,59 +139,72 @@
     left: 0;
     top: 0;
 }
+
 .absoluteDiv2 {
-    margin: 0;
     position: absolute;
     background-color: green;
+    margin: 0;
+    top: 0;
 }
 .absoluteDiv3 {
-    margin: 0;
     position: absolute;
-    background-color: pink;
-    top: 120px;
+    background-color: red;
+    margin: 0;
+    top: 0;
+    right: 0;
 }
 .absoluteDiv4 {
-    margin: 0;
     position: absolute;
     background-color: blue;
-    left: 200px;
-}
-.absoluteDiv5 {
     margin: 0;
-    position: absolute;
-    background-color: yellow;
-    right: 0;
-}
-.absoluteDiv6 {
-    margin: 0;
-    position: absolute;
-    background-color: orange;
-    right: 0;
-    bottom: 0;
-}
-.absoluteDiv7 {
-    margin: 0;
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    background-color: orange;
-    left: 400px;
-    top: 100px;
-}
-.absoluteDiv7A {
-    margin: 0;
-    position: absolute;
-    background-color: pink;
     left: 0;
     bottom: 0;
 }
-.absoluteDiv7B {
-    margin: 0;
+.absoluteDiv5 {
     position: absolute;
-    background-color: blueviolet;
-    top: -10px;
-    right: -10px;
+    background-color: pink;
+    margin: 0;
+    right: 0;
+    bottom: 0;
 }
+.absoluteDiv6 {
+    position: absolute;
+    background-color: yellow;
+    margin: 0;
+    top: 100px;
+    left: 40%;
+    width: 300px;
+    height: 300px;
+}
+.absoluteDiv7A {
+    position: absolute;
+    background-color: green;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+.absoluteDiv7B {
+    position: absolute;
+    background-color: orange;
+    margin: 0;
+    right: 0;
+    top: 0;
+}
+.absoluteDiv7C {
+    position: absolute;
+    background-color: darkcyan;
+    margin: 0;
+    left: 10px;
+    bottom: 10px;
+}
+.absoluteDiv7D {
+    position: absolute;
+    background-color: darkblue;
+    margin: 0;
+    right: 0;
+    bottom: 0;
+}
+
 /* 练习固定定位 */
 .fixedDiv {
     width: 100px;
