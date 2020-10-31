@@ -89,19 +89,6 @@ $(document).ready(function () {
     $("dl:eq(5) dd[class^='content']").css('font-size', '30px');
     $("dl:eq(5) dd[class$='01']").css('color', 'pink');
 
-    // 测试查找 find、parent、children
-    $(".queryDiv button:eq(0)").click(function () {
-        alert($(".queryDiv > .div01").children(".div02").html());
-    });
-
-    $(".queryDiv button:eq(1)").click(function () {
-        alert($(".queryDiv .div03").parent().parent().html());
-    });
-
-    // find 可以查找子孙节点，children 只可以查找子节点
-    $(".queryDiv button:eq(2)").click(function () {
-        alert($(".queryDiv").find(".div03").html());
-    });
 
     // 表单选择器
     $(":input").css('width', '500px');
@@ -132,6 +119,11 @@ $(document).ready(function () {
         $(liNode).html("我是列表第 " + index + " 项元素");
     });
 
+    // 测试查找 find、parent、children
+    $(".queryDiv > .div01").children(".div02").css('color', 'red');
+    // find 可以查找子孙节点，children 只可以查找子节点
+    $(".queryDiv").find(".div03").css('color', 'blue');
+    $(".queryDiv .div03").parent().parent().css('font-size', '30px');
 
     // 数据缓存
     $(".dataCache:eq(0) > button:eq(0)").click(function (){

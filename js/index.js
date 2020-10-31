@@ -253,8 +253,8 @@ function testHasChildNodes01 () {
 
 function testGetAttribute01() {
     var loginBoxNode = document.getElementById("loginBox");
-    var styleNode = loginBoxNode.getAttribute("style");
-    alert(styleNode);
+    var styleText = loginBoxNode.getAttribute("style");
+    alert(styleText);
 }
 
 function testSetAttribute01 () {
