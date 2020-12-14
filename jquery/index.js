@@ -1,9 +1,6 @@
 // window.onload 等价于 $(document).ready
 // window.onload = function () {}
 $(document).ready(function () {
-    // 测试 $(document).ready(function () {}) 的效果
-    // alert(document.getElementsByTagName("body")[0].innerHTML);
-
     // js 对象
     var jsAndJqueryBtn1 = document.getElementsByClassName("jsAndJquery_btn1")[0];
     jsAndJqueryBtn1.onclick = function () {
@@ -75,9 +72,6 @@ $(document).ready(function () {
     $("dl:eq(3) span:parent").css('color', 'green');
 
     // 可见性选择器
-    // 某个单击事件里使用$(this).hide(); 元素不会隐藏
-    // 然后给hide() 加上个参数 速度, hide(1) 就可以隐藏了, 这是为什么?
-    // w3school里有一句话 "如果元素已经是完全可见，则该效果不产生任何变化，除非规定了 callback 函数。"
     $(".visibleDiv:visible").hide(1);
     $(".visibleDiv:hidden").show();
 

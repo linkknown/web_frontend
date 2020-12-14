@@ -61,9 +61,6 @@ a:active {
 a:hover {
     color: red;
 }
-input:focus {
-    color: red;
-}
 
 .div06 {
     width: 100px;
@@ -74,6 +71,10 @@ input:focus {
 .div06:hover {
     background-color: blue;
     width: 200px;
+}
+
+input:focus {
+    color: red;
 }
 
 /* 表单状态选择器 */

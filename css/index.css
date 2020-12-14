@@ -60,8 +60,8 @@
 .floatUl ul li{
     list-style: none;
     float: left;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     margin: 10px;
     background-color: green;
 }
@@ -127,83 +127,35 @@
     background-color: pink;
     display: inline-block;
 }
-.absoluteDiv1A {
-    margin: 0;
-    position: absolute;
-    background-color: darkcyan;
-}
-.absoluteDiv1B {
-    margin: 0;
-    position: absolute;
-    background-color: darkcyan;
-    left: 0;
-    top: 0;
-}
 
-.absoluteDiv2 {
+.absoluteDiv1 {
     position: absolute;
     background-color: green;
     margin: 0;
     top: 0;
 }
-.absoluteDiv3 {
+.absoluteDiv2 {
     position: absolute;
     background-color: red;
     margin: 0;
     top: 0;
     right: 0;
 }
-.absoluteDiv4 {
+.absoluteDiv3 {
     position: absolute;
     background-color: blue;
     margin: 0;
     left: 0;
     bottom: 0;
 }
-.absoluteDiv5 {
+.absoluteDiv4 {
     position: absolute;
     background-color: pink;
     margin: 0;
-    right: 0;
-    bottom: 0;
-}
-.absoluteDiv6 {
-    position: absolute;
-    background-color: yellow;
-    margin: 0;
-    top: 100px;
-    left: 40%;
-    width: 300px;
-    height: 300px;
-}
-.absoluteDiv7A {
-    position: absolute;
-    background-color: green;
-    margin: 0;
-    left: 0;
-    top: 0;
-}
-.absoluteDiv7B {
-    position: absolute;
-    background-color: orange;
-    margin: 0;
-    right: 0;
-    top: 0;
-}
-.absoluteDiv7C {
-    position: absolute;
-    background-color: darkcyan;
-    margin: 0;
-    left: 10px;
+    right: 10px;
     bottom: 10px;
 }
-.absoluteDiv7D {
-    position: absolute;
-    background-color: darkblue;
-    margin: 0;
-    right: 0;
-    bottom: 0;
-}
+
 
 /* 练习固定定位 */
 .fixedDiv {

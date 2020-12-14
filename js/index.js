@@ -9,12 +9,12 @@ window.onload = function () {
     // 练习 json
     var testCreateJsonNode = document.getElementById("testCreateJson");
 
-    // testCreateJsonNode.onclick = function () {}
-    // testCreateJsonNode.ondblclick = function () {}
-    // testCreateJsonNode.onmouseenter = function () {}
-    // testCreateJsonNode.addEventListener('click', function () {});
-    // testCreateJsonNode.addEventListener('dblclick', function () {});
-    // testCreateJsonNode.addEventListener('mouseenter', function () {});
+    // xxxxx.onclick = function () {}
+    // xxxxx.ondblclick = function () {}
+    // xxxxx.onmouseenter = function () {}
+    // xxxxx.addEventListener('click', function () {});
+    // xxxxx.addEventListener('dblclick', function () {});
+    // xxxxx.addEventListener('mouseenter', function () {});
 
     testCreateJsonNode.addEventListener('click', function () {
         // var、let、const 都可以定义声明变量活常量
@@ -182,38 +182,22 @@ function goPage (pageName) {
 function showScreenInfo () {
     var node = document.getElementsByClassName("screenInfoBox")[0];
     node.innerHTML = "当前时间：" + new Date().getTime()
-        +"<br />"+
-        "屏幕分辨率为："+screen.width+"*"+screen.height
-        +"<br />"+
-        "屏幕可用大小："+screen.availWidth+"*"+screen.availHeight
-        +"<br />"+
-        "网页可见区域宽："+document.body.clientWidth
-        +"<br />"+
-        "网页可见区域高："+document.body.clientHeight
-        +"<br />"+
-        "网页可见区域宽(包括边线的宽)："+document.body.offsetWidth
-        +"<br />"+
-        "网页可见区域高(包括边线的宽)："+document.body.offsetHeight
-        +"<br />"+
-        "网页正文全文宽："+document.body.scrollWidth
-        +"<br />"+
-        "网页正文全文高："+document.body.scrollHeight
-        +"<br />"+
-        "网页被卷去的高："+document.body.scrollTop
-        +"<br />"+
-        "网页被卷去的左："+document.body.scrollLeft
-        +"<br />"+
-        "网页正文部分上："+window.screenTop
-        +"<br />"+
-        "网页正文部分左："+window.screenLeft
-        +"<br />"+
-        "屏幕分辨率的高："+window.screen.height
-        +"<br />"+
-        "屏幕分辨率的宽："+window.screen.width
-        +"<br />"+
-        "屏幕可用工作区高度："+window.screen.availHeight
-        +"<br />"+
-        "屏幕可用工作区宽度："+window.screen.availWidth;
+        +"<br />"+ "屏幕分辨率为："+screen.width+"*"+screen.height
+        +"<br />"+ "屏幕可用大小："+screen.availWidth+"*"+screen.availHeight
+        +"<br />"+ "网页可见区域宽："+document.body.clientWidth
+        +"<br />"+ "网页可见区域高："+document.body.clientHeight
+        +"<br />"+ "网页可见区域宽(包括边线的宽)："+document.body.offsetWidth
+        +"<br />"+ "网页可见区域高(包括边线的宽)："+document.body.offsetHeight
+        +"<br />"+ "网页正文全文宽："+document.body.scrollWidth
+        +"<br />"+ "网页正文全文高："+document.body.scrollHeight
+        +"<br />"+ "网页被卷去的高："+document.body.scrollTop
+        +"<br />"+ "网页被卷去的左："+document.body.scrollLeft
+        +"<br />"+ "网页正文部分上："+window.screenTop
+        +"<br />"+ "网页正文部分左："+window.screenLeft
+        +"<br />"+ "屏幕分辨率的高："+window.screen.height
+        +"<br />"+ "屏幕分辨率的宽："+window.screen.width
+        +"<br />"+ "屏幕可用工作区高度："+window.screen.availHeight
+        +"<br />"+ "屏幕可用工作区宽度："+window.screen.availWidth;
 }
 
 // 测试
@@ -317,12 +301,6 @@ function testInsertAfter01 (){
     var newLiNode = document.createElement("li");
     newLiNode.innerText = "我是插入的节点" + new Date().getTime();
 
-    // 可由以下逻辑实现
-    // if (targetIndex === liNodes.length - 1) {
-    //     ulNode.appendChild(liNode);
-    // } else {
-    //     ulNode.insertBefore(liNode, liNodes[targetIndex + 1]);
-    // }
     insertAfter(targetIndex, ulNode, liNodes, newLiNode);
 }
 
@@ -378,7 +356,6 @@ function showUpperText (event) {
 }
 
 
-// dom api 综合练习
 function submitUserSalaryForm () {
     var addFlag = true;     // 新增标识
 
@@ -407,6 +384,7 @@ function submitUserSalaryForm () {
     tdNode2.innerText = passwordNode[0].value;
     var tdNode3 = document.createElement("td");
     tdNode3.innerText = salaryNode[0].value;
+
     var tdNode4 = document.createElement("td");
     tdNode4.innerHTML = "<span style='color: blue;cursor: pointer;' onclick='deleteUserSlary(" + userIdNode[0].value + ")'>删除</span>&nbsp;&nbsp;&nbsp;"
         + "<span style='color: green;cursor: pointer;' onclick='modifyUserSlary(" + userIdNode[0].value + ")'>修改</span>";
@@ -426,8 +404,6 @@ function submitUserSalaryForm () {
         var oldRowNode = getTrNode(userIdNode[0].value);
         tbodyNode.replaceChild(rowNode, oldRowNode);
     }
-
-
     // 重置表单
     userIdNode[0].value = "";
     userNameNode[0].value = "";
